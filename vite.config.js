@@ -14,8 +14,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.js'),
-      name: 'kintone-vue-component',
-      fileName: (format) => `kintone-vue-component.${format}.js`,
+      name: 'kintone-vue3-component',
+      fileName: (format) => `kintone-vue3-component.${format}.js`,
     },
     rollupOptions: {
       external: ['vue'],
