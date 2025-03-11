@@ -1,0 +1,50 @@
+{
+  "name": "@zygapp/kintone-vue-component",
+  "version": "0.0.1",
+  "description": "Vue 3 用 kintone UI コンポーネントは、kintone カスタマイズを簡略化するためのツールです。事前定義されたコンポーネントやカスタマイズ性、アクセシビリティ対応により、効率的で使いやすい UI を構築できます。",
+  "type": "module",
+  "main": "./dist/kintone-vue-component.umd.js",
+  "module": "./dist/kintone-vue-component.es.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/kintone-vue-component.es.js",
+      "require": "./dist/kintone-vue-component.umd.js"
+    },
+    "./style.css": "./dist/kintone-vue-component.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "component",
+    "kintone"
+  ],
+  "dependencies": {
+    "@iconify/types": "^2.0.0",
+    "@kintone/rest-api-client": "^5.7.0",
+    "@tailwindcss/vite": "^4.0.3",
+    "@vueuse/components": "^12.4.0",
+    "@vueuse/core": "^12.5.0",
+    "@vueuse/integrations": "^12.5.0",
+    "dayjs": "^1.11.13",
+    "postcss-replace": "^2.0.1",
+    "sass-embedded": "^1.83.4",
+    "sortablejs": "^1"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@iconify/vue": "^4.3.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.5",
+    "vite-plugin-dts": "^4.5.0"
+  }
+}

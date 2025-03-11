@@ -1,0 +1,173 @@
+@mixin date-picker-styles {
+  .kvc-date-picker {
+    .kvc-field-value {
+      width: 100px !important;
+    }
+    .kvc-field-text {
+      width: 100px !important;
+    }
+  }
+
+  .kvc-datepicker-popup {
+    position: absolute;
+    z-index: 10;
+    padding: 32px 32px 24px;
+    width: 336px;
+    background-color: #fff;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 13px;
+
+    .kvc-datepicker-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--kvc-color-base);
+      padding-bottom: 0.5rem;
+
+      .kvc-datepicker-control-year-month {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+
+        .kvc-datepicker-control-year,
+        .kvc-datepicker-control-month {
+          .kvc-datepicker-control-selector {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 0.5rem;
+            height: calc(var(--spacing) * 8);
+
+            &:focus {
+              outline-width: 1px;
+              outline-color: var(--kvc-color-primary);
+            }
+
+            .kvc-datepicker-control-selector-text {
+              line-height: 13px;
+              font-size: 13px;
+              font-weight: 700;
+            }
+
+            svg {
+              margin: 0 auto;
+              color: var(--kvc-color-disabled-text);
+            }
+
+            & > .kvc-datepicker-controll-selector-list {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              transform: translateY(100%);
+            }
+          }
+        }
+      }
+
+      .kvc-datepicker-control-prev,
+      .kvc-datepicker-control-next {
+        svg {
+          margin: 0 auto;
+          color: var(--kvc-color-disabled-text);
+        }
+      }
+    }
+
+    table.kvc-datepicker-body {
+      width: 100%;
+
+      & > thead {
+        text-align: center;
+        font-size: 13px;
+        padding: 0;
+        height: 44px;
+
+        th {
+          &.kvc-datepicker-day {
+            padding: 0.5rem 0;
+            font-size: 10px;
+          }
+
+          &.kvc-datepicker-day-saturday,
+          &.kvc-datepicker-day-sunday {
+            color: var(--kvc-color-disabled-background);
+          }
+        }
+      }
+
+      & > tbody {
+        td {
+          padding: 0;
+          border: 0;
+          background-color: white;
+
+          button.kvc-datepicker-date {
+            display: inline-block;
+            font-size: 10px;
+            width: 100%;
+            padding: 0.5rem 0;
+
+            &:hover {
+              color: black;
+            }
+
+            &.kvc-datepicker-date-notcurrent-month {
+              color: var(--kvc-color-disabled-background);
+            }
+
+            &.kvc-datepicker-date-today {
+              background-color: var(--kvc-color-disabled-text);
+              color: white;
+            }
+
+
+            &.kvc-datepicker-date-current {
+              outline: 1px solid var(--kvc-color-primary);
+            }
+          }
+        }
+
+        .kvc-datepicker-monthyear-wrapper {
+          .kvc-datepicker-monthyear-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .kvc-datepicker-button {
+              border: 1px solid #fff;
+              display: inline-block;
+              line-height: 30px;
+              font-size: 13px;
+              font-weight: 700;
+
+              &::after {
+                content: "▼";
+                width: 32px;
+              }
+
+              &:focus {
+                border: 1px solid var(--kvc-color-primary);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .kvc-datepicker-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: .5rem;
+
+      button {
+        &.kvc-datepicker-bottom-today,
+        &.kvc-datepicker-bottom-clear {
+          font-size: 13px;
+          color: var(--kvc-color-primary);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@mixin table-styles {
+  .kvc-table {
+    border-spacing: 0;
+    min-width: max-content;
+    border-collapse: separate;
+    border-color: var(--kvc-color-border);
+    color: #333;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 0px;
+    padding-bottom: 4px;
+
+    & > thead {
+      & > tr > th {
+        background-color: var(--kvc-color-primary);
+        border-color: var(--kvc-color-primary);
+        border-width: 1px;
+        color: white;
+        font-size: 12px;
+        font-weight: 400;
+        height: 40px;
+        text-align: left;
+        vertical-align: middle;
+        white-space-collapse: collapse;
+
+        .kvc-table-header-label {
+          line-height: 18px;
+          display: inline-block;
+          padding: 4px 8px;
+          width: 100%;
+        }
+      }
+    }
+
+    & > tbody {
+      & > tr > td {
+        // background-color: var(--kvc-color-base-light);
+        border-color: var(--kvc-color-border);
+        border-width: 0 1px 1px;
+        vertical-align: top;
+        padding: 4px 8px;
+        border-style: solid;
+        width: max-content;
+
+        &:nth-child(n + 2) {
+          border-left-width: 0;
+        }
+      }
+    }
+
+    & > thead,
+    & > tbody {
+      & > tr > th,
+      & > tr > td {
+        &.kvc-table-operation {
+          right: 0px;
+          position: sticky;
+          border-left-width: 0;
+          padding: 4px 0;
+          border-width: 1px;
+          border-style: solid;
+          border-width: 0 1px 1px;
+          white-space: nowrap;
+          box-shadow: -2px 0 4px 0 rgba(0, 0, 0, 0.08);
+          vertical-align: middle;
+
+          .kvc-table-operation-buttons {
+            padding: 0 12px;
+            display: flex;
+            gap: 18px;
+
+            button.kvc-table-btn-plus,
+            button.kvc-table-btn-minus {
+              cursor: pointer;
+              width: 18px;
+              height: 18px;
+              border-radius: 9999px;
+              color: white;
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            button.kvc-table-btn-plus {
+              background-color: var(--kvc-color-primary);
+            }
+
+            button.kvc-table-btn-minus {
+              background-color: var(--kvc-color-secondary-light);
+              &:hover {
+                background-color: var(--kvc-color-error);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

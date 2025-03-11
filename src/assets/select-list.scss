@@ -1,0 +1,46 @@
+@mixin select-list-styles {
+  ul.kvc-select-list {
+    overflow-y: auto;
+    box-sizing: border-box;
+    min-width: 280px;
+    position: absolute;
+    z-index: 10;
+    margin: 0;
+    padding: 8px 0;
+    border: 1px solid var(--kvc-color-base);
+    background-color: white;
+    list-style: none;
+    line-height: 1;
+
+    & > li.kvc-select-list-item {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      padding: .5rem 0;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--kvc-color-primary-light);
+      }
+
+      &.kvc-select-list-item-selected {
+        & > * {
+          color: var(--kvc-color-primary);
+        }
+      }
+
+      .kvc-select-list-item-icon-space {
+        display: inline-flex;
+        justify-content: center;
+        width: 1.5rem;
+      }
+
+      .kvc-select-list-item-text {
+        display: block;
+        flex: 1;
+        font-weight: normal;
+        font-size: 14px;
+      }
+    }
+  }
+}
