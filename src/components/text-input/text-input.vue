@@ -7,6 +7,10 @@ const props = defineProps({
   nonstyled: { type: Boolean, default: false },
   readOnly: { type: Boolean, default: false },
   width: { type: String, default: '150px' },
+  type: { type: String, default: 'text' },
+  placeholder: { type: String, default: '' },
+  min: { type: [String,Number], default: undefined },
+  max: { type: [String,Number], default: undefined },
 })
 
 const inputValue = computed({
@@ -24,8 +28,11 @@ const inputValue = computed({
 
   <input
     v-else
-    type="text"
-    class="kvc-field-text"
     v-model="inputValue"
+    class="kvc-field-text"
+    :placeholder="placeholder"
+    :type="type"
+    :min="min"
+    :max="max"
   />
 </template>
