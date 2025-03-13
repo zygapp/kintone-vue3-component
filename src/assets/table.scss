@@ -75,10 +75,13 @@
               width: 18px;
               height: 18px;
               border-radius: 9999px;
+              border: 0;
               color: white;
               display: inline-flex;
               justify-content: center;
               align-items: center;
+              padding: 0;
+              outline: 0;
             }
 
             button.kvc-table-btn-plus {
@@ -92,6 +95,16 @@
               }
             }
           }
+        }
+      }
+      & > tr > th {
+        &.kvc-table-operation {
+          background-color: var(--kvc-color-primary);
+        }
+      }
+      & > tr > td {
+        &.kvc-table-operation {
+          background-color: white;
         }
       }
     }
