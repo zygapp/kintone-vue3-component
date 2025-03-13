@@ -15,9 +15,9 @@ const items = ref([
   'label-c'
 ])
 const columns = ref([
-  { label: 'columnA', field: 'columnA', width: 200 },
-  { label: 'columnB', field: 'columnB' },
-  { label: 'columnC', field: 'columnC' }
+  { label: 'columnA', code: 'columnA', width: 200 },
+  { label: 'columnB', code: 'columnB' },
+  { label: 'columnC', code: 'columnC' }
 ])
 const rows = ref([
   { 'columnA': 'AAA1', 'columnB': 'BBB1', 'columnC': 'CCC1' },

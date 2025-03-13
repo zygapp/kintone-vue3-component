@@ -56,7 +56,7 @@ const onClickRemoveRow = (index) => {
         <th
           v-for="(col, c) of columns"
           :key="c"
-          :style="typeof col?.width === 'string' ? col.width : col.width+'px'"
+          :style="col?.width ? {width:col?.width} : undefined"
         >
           <span class="kvc-table-header-label">{{ col?.label ?? col }}</span></th>
         <th
@@ -87,15 +87,16 @@ const onClickRemoveRow = (index) => {
         <td
           v-for="(col, c) of columns"
           :key="'col-'+c"
-          :data-field="col?.field || col"
+          :data-code="col?.code || col"
+          :style="col?.width ? {width:col?.width} : undefined"
         >
           <slot
-            :name="col?.field || col"
+            :name="col?.code || col"
             :index="r"
             :row="row"
             :width="col?.width"
-            :column="col?.field || col"
-            :value="row[col?.field || col]"
+            :column="col?.code || col"
+            :value="row[col?.code || col]"
           ></slot>
         </td>
 
