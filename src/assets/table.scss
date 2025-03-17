@@ -96,6 +96,11 @@
             }
           }
         }
+
+        .kvc-file-value {
+          background-color: inherit !important;
+          border: none !important;
+        }
       }
       & > tr > th {
         &.kvc-table-operation {
