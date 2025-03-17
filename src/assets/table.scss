@@ -45,6 +45,11 @@
         &:nth-child(n + 2) {
           border-left-width: 0;
         }
+
+        .kvc-file-value {
+          background-color: inherit !important;
+          border: none !important;
+        }
       }
     }
 
@@ -95,11 +100,6 @@
               }
             }
           }
-        }
-
-        .kvc-file-value {
-          background-color: inherit !important;
-          border: none !important;
         }
       }
       & > tr > th {
