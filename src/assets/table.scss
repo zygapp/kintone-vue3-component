@@ -22,11 +22,11 @@
         text-align: left;
         vertical-align: middle;
         white-space-collapse: collapse;
+        line-height: 18px;
+        padding: 4px 8px;
 
         .kvc-table-header-label {
-          line-height: 18px;
           display: inline-block;
-          padding: 4px 8px;
           width: 100%;
         }
       }
@@ -49,6 +49,11 @@
         .kvc-file-value {
           background-color: inherit !important;
           border: none !important;
+        }
+
+        .kvc-checkbox-group,
+        .kvc-radio-group {
+          border-width: 0 !important;
         }
       }
     }

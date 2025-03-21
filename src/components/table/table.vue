@@ -58,7 +58,12 @@ const onClickRemoveRow = (index) => {
           :key="c"
           :style="col?.width ? {width:col?.width} : undefined"
         >
-          <span class="kvc-table-header-label">{{ col?.label ?? col }}</span></th>
+          <slot :name="`column-${col?.code || col}`">
+            <span class="kvc-table-header-label">
+              {{ col?.label ?? col }}
+            </span>
+          </slot>
+        </th>
         <th
           v-if="!isHideOperations"
           class="kvc-table-operation"
