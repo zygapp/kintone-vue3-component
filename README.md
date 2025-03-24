@@ -1,4 +1,4 @@
-# Kintone Vue Component Library
+# kintone Vue3 Component
 
 Vue 3 + TypeScript 対応の UI コンポーネントライブラリです。  
 kintone カスタマイズや業務アプリ開発で使いやすいよう設計されています。
@@ -6,10 +6,6 @@ kintone カスタマイズや業務アプリ開発で使いやすいよう設計
 ## 📦 インストール
 
 ```bash
-npm install @zygapp/kintone-vue3-component
-
-or
-
 npm install https://git.zygapp.org/kintone-utils/kintone-vue3-component.git
 ```
 
@@ -18,7 +14,8 @@ npm install https://git.zygapp.org/kintone-utils/kintone-vue3-component.git
 ```ts
 import { createApp } from "vue";
 import App from "./App.vue";
-import KintoneVueComponent from "kintone-vue3-component";
+import KintoneVueComponent from "@zygapp/kintone-vue3-component";
+import "@zygapp/kintone-vue3-component/style.css";
 
 const app = createApp(App);
 app.use(KintoneVueComponent);
