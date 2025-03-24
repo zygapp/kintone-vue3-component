@@ -73,19 +73,19 @@ app.use(KintoneVueComponent);
 
 ## 📚 コンポーネント一覧
 
-| コンポーネント名                                  | 概要                       | kintone フィールドタイプ |
-| ------------------------------------------------- | -------------------------- | ------------------------ |
-| [KvcWrap](READMEs/KvcWrap.md)                     | form/div 切り替えラッパー  | -                        |
-| [KvcRow](READMEs/KvcRow.md)                       | 入力行レイアウトラッパー   | -                        |
-| [KvcField](READMEs/KvcField.md)                   | 入力フィールドラッパー     | -                        |
-| [KvcButton](READMEs/KvcButton.md)                 | スタイル付きボタン         | -                        |
-| [KvcCheckbox](READMEs/KvcCheckbox.md)             | 複数選択チェックボックス   | `CHECK_BOX`              |
-| [KvcRadio](READMEs/KvcRadio.md)                   | 単一選択ラジオボタン       | `RADIO_BUTTON`           |
-| [KvcTextInput](READMEs/KvcTextInput.md)           | テキスト入力フィールド     | `SINGLE_LINE_TEXT`       |
-| [KvcTextarea](READMEs/KvcTextarea.md)             | テキストエリア             | `MULTI_LINE_TEXT`        |
-| [KvcDropdown](READMEs/KvcDropdown.md)             | ドロップダウンセレクト     | `DROP_DOWN`              |
-| [KvcDatePicker](READMEs/KvcDatePicker.md)         | 日付選択コンポーネント     | `DATE`                   |
-| [KvcTimePicker](READMEs/KvcTimePicker.md)         | 時間選択コンポーネント     | `TIME`                   |
-| [KvcDateTimePicker](READMEs/KvcDateTimePicker.md) | 日付＋時間複合選択         | `DATE_TIME`              |
-| [KvcTable](READMEs/KvcTable.md)                   | 行追加・削除可能なテーブル | `SUBTABLE`               |
-| [KvcFileSelect](READMEs/KvcFileSelect.md)         | ファイル選択・アップロード | `FILE`                   |
+| コンポーネント名                               | 概要                       | kintone フィールドタイプ |
+| ---------------------------------------------- | -------------------------- | ------------------------ |
+| [KvcWrap](docs/KvcWrap.md)                     | form/div 切り替えラッパー  | -                        |
+| [KvcRow](docs/KvcRow.md)                       | 入力行レイアウトラッパー   | -                        |
+| [KvcField](docs/KvcField.md)                   | 入力フィールドラッパー     | -                        |
+| [KvcButton](docs/KvcButton.md)                 | スタイル付きボタン         | -                        |
+| [KvcCheckbox](docs/KvcCheckbox.md)             | 複数選択チェックボックス   | `CHECK_BOX`              |
+| [KvcRadio](docs/KvcRadio.md)                   | 単一選択ラジオボタン       | `RADIO_BUTTON`           |
+| [KvcTextInput](docs/KvcTextInput.md)           | テキスト入力フィールド     | `SINGLE_LINE_TEXT`       |
+| [KvcTextarea](docs/KvcTextarea.md)             | テキストエリア             | `MULTI_LINE_TEXT`        |
+| [KvcDropdown](docs/KvcDropdown.md)             | ドロップダウンセレクト     | `DROP_DOWN`              |
+| [KvcDatePicker](docs/KvcDatePicker.md)         | 日付選択コンポーネント     | `DATE`                   |
+| [KvcTimePicker](docs/KvcTimePicker.md)         | 時間選択コンポーネント     | `TIME`                   |
+| [KvcDateTimePicker](docs/KvcDateTimePicker.md) | 日付＋時間複合選択         | `DATE_TIME`              |
+| [KvcTable](docs/KvcTable.md)                   | 行追加・削除可能なテーブル | `SUBTABLE`               |
+| [KvcFileSelect](docs/KvcFileSelect.md)         | ファイル選択・アップロード | `FILE`                   |
