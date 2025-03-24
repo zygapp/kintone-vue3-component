@@ -163,7 +163,7 @@
               }
 
               &:focus {
-                border: 1px solid theme("colors.primary.DEFAULT");
+                border: 1px solid var(--kvc-color-primary);
               }
             }
           }

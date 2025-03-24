@@ -29,7 +29,6 @@
   "dependencies": {
     "@iconify/types": "^2.0.0",
     "@kintone/rest-api-client": "^5.7.0",
-    "@tailwindcss/vite": "^4.0.3",
     "@vueuse/components": "^12.4.0",
     "@vueuse/core": "^12.5.0",
     "@vueuse/integrations": "^12.5.0",

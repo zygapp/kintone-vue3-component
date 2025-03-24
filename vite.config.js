@@ -13,7 +13,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.js'),
+      entry: resolve(__dirname, 'src/index.ts'),
       name: 'kintone-vue3-component',
       fileName: (format) => `kintone-vue3-component.${format}.js`,
     },
