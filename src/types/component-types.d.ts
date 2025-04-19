@@ -61,6 +61,7 @@ export interface KvcDateTimePickerProps {
 
 // KvcDropdown
 export interface KvcDropdownProps {
+  width?: string | number;
   nonstyled?: boolean;
   disabled?: boolean;
   readOnly?: boolean;
@@ -161,6 +162,18 @@ export interface KvcTimePickerProps {
   modelValue?: string;
   readOnly?: boolean;
   disabled?: boolean;
+}
+
+
+// KvcTab
+export interface KvcTabProps {
+  small?: boolean
+  modelValue: string
+}
+
+export interface KvcTabPaneProps {
+  label: string
+  name: string
 }
 
 

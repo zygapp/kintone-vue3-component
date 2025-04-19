@@ -30,6 +30,11 @@
       }
     }
 
+    .kvc-dropdown-label {
+      display: inline-block;
+      width: 100%;
+    }
+
     &.kvc-dropdown-full {
       .kvc-dropdown-button {
         width: 100%;

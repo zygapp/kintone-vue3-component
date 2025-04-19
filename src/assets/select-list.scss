@@ -1,5 +1,6 @@
 @mixin select-list-styles {
   ul.kvc-select-list {
+    max-height: 100vh;
     overflow-y: auto;
     box-sizing: border-box;
     min-width: 280px;

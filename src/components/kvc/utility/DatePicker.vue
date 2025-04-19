@@ -59,12 +59,14 @@ const years = computed(() => {
   return yearRange
 })
 
-const changeYear = (value: number) => {
+const changeYear = (value: number | string) => {
+  value = Number(value)
   currentDate.value = dayjs(currentDate.value || undefined).year(value).format('YYYY-MM-DD')
   setTimeout(() => (visibles.year = false), 10)
 }
 
-const changeMonth = (value: number) => {
+const changeMonth = (value: number | string) => {
+  value = Number(value)
   currentDate.value = dayjs(currentDate.value || undefined).month(value - 1).format('YYYY-MM-DD')
   setTimeout(() => (visibles.month = false), 10)
 }

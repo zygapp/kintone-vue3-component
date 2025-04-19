@@ -1,31 +1,33 @@
-import { default as KvcWrap } from './kvc/wrap.vue'
-import { default as KvcRow } from './kvc/row.vue'
-import { default as KvcTable } from './kvc/table.vue'
-import { default as KvcDropdown } from './kvc/dropdown.vue'
-import { default as KvcButton } from './kvc/button.vue'
-import { default as KvcField } from './kvc/field.vue'
-import { default as KvcRadio } from './kvc/radio.vue'
-import { default as KvcCheckbox } from './kvc/checkbox.vue'
-import { default as KvcTextInput } from './kvc/text-input.vue'
-import { default as KvcDatePicker } from './kvc/date-picker.vue'
-import { default as KvcTimePicker } from './kvc/time-picker.vue'
-import { default as KvcDateTimePicker } from './kvc/datetime-picker.vue'
-import { default as KvcTextarea } from './kvc/textarea.vue'
-import { default as KvcFileSelect } from './kvc/file-select.vue'
+export { default as KvcWrap } from './kvc/wrap.vue'
+export { default as KvcRow } from './kvc/row.vue'
+export { default as KvcTable } from './kvc/table.vue'
+export { default as KvcDropdown } from './kvc/dropdown.vue'
+export { default as KvcButton } from './kvc/button.vue'
+export { default as KvcField } from './kvc/field.vue'
+export { default as KvcRadio } from './kvc/radio.vue'
+export { default as KvcCheckbox } from './kvc/checkbox.vue'
+export { default as KvcTextInput } from './kvc/text-input.vue'
+export { default as KvcDatePicker } from './kvc/date-picker.vue'
+export { default as KvcTimePicker } from './kvc/time-picker.vue'
+export { default as KvcDateTimePicker } from './kvc/datetime-picker.vue'
+export { default as KvcTextarea } from './kvc/textarea.vue'
+export { default as KvcFileSelect } from './kvc/file-select.vue'
+export { default as KvcTab } from './kvc/tab/index.vue'
+export { default as KvcTabPane } from './kvc/tab/pane.vue'
 
-export {
-  KvcWrap,
-  KvcRow,
-  KvcTable,
-  KvcDropdown,
-  KvcButton,
-  KvcField,
-  KvcRadio,
-  KvcCheckbox,
-  KvcTextInput,
-  KvcDatePicker,
-  KvcTimePicker,
-  KvcDateTimePicker,
-  KvcTextarea,
-  KvcFileSelect,
-}
+export type { default as KvcWrapType } from './kvc/wrap.vue'
+export type { default as KvcRowType } from './kvc/row.vue'
+export type { default as KvcTableType } from './kvc/table.vue'
+export type { default as KvcDropdownType } from './kvc/dropdown.vue'
+export type { default as KvcButtonType } from './kvc/button.vue'
+export type { default as KvcFieldType } from './kvc/field.vue'
+export type { default as KvcRadioType } from './kvc/radio.vue'
+export type { default as KvcCheckboxType } from './kvc/checkbox.vue'
+export type { default as KvcTextInputType } from './kvc/text-input.vue'
+export type { default as KvcDatePickerType } from './kvc/date-picker.vue'
+export type { default as KvcTimePickerType } from './kvc/time-picker.vue'
+export type { default as KvcDateTimePickerType } from './kvc/datetime-picker.vue'
+export type { default as KvcTextareaType } from './kvc/textarea.vue'
+export type { default as KvcFileSelectType } from './kvc/file-select.vue'
+export type { default as KvcTabType } from './kvc/tab/index.vue'
+export type { default as KvcTabPaneType } from './kvc/tab/pane.vue'

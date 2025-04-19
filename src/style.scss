@@ -7,6 +7,7 @@
 @use './assets/text-input' as *;
 @use './assets/select-list' as *;
 @use './assets/table' as *;
+@use './assets/tab' as *;
 
 :root {
   --kvc-spacing: 0.25rem;
@@ -48,6 +49,7 @@
   @include select-list-styles;
   @include text-input-styles;
   @include table-styles;
+  @include tab-styles;
 
   * {
     box-sizing: border-box;

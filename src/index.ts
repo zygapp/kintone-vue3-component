@@ -1,13 +1,13 @@
 import '@/style.scss';
 import * as components from './components';
-import type { App, Plugin } from 'vue'
+import type { App, Plugin, Component } from 'vue'
 
 const KintoneVueComponent: Plugin = {
-  install: (app: App) => {
-    for (const componentName in components) {
-      const component = (components as Record<string, any>)[componentName]
-      app.component(component.name || componentName, component)
-    }
+  install(app: App) {
+    Object.entries(components).forEach(([componentName, component]) => {
+      const vueComponent = component as Component
+      app.component(vueComponent.name || componentName, vueComponent)
+    })
   }
 }
 

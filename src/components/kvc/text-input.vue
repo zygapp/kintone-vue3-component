@@ -12,6 +12,18 @@ const inputValue = computed({
   get: () => props.modelValue ?? '',
   set: (value: string) => emits('update:modelValue', value)
 })
+
+const isNumber = (value: unknown): boolean =>
+  typeof value === 'number' || !isNaN(Number(value))
+
+const $width = computed(() => {
+  console.log(props.width)
+  if (props.width) {
+    return isNumber(props.width) ? `${props.width}px` : props.width
+  } else {
+    return '100%'
+  }
+})
 </script>
 
 <template>
@@ -27,6 +39,7 @@ const inputValue = computed({
     v-else
     v-model="inputValue"
     class="kvc-field-text"
+    :style="{ width: $width }"
     :placeholder="placeholder"
     :type="type"
     :min="min"

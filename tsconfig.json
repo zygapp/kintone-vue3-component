@@ -9,15 +9,17 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
     "skipLibCheck": true,
     "types": [],
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "declaration": true,
+    "emitDeclarationOnly": true,
   },
-  "include": ["src/**/*.ts", "src/**/*.vue"],
+  "include": ["src", "src/types"],
   "files": [
     "src/types/component-types.d.ts",
     "src/types/vue-shim.d.ts"

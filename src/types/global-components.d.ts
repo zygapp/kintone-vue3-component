@@ -1,0 +1,41 @@
+import { DefineComponent } from 'vue'
+import {
+  KvcButtonProps,
+  KvcCheckboxProps,
+  KvcDatePickerProps,
+  KvcDateTimePickerProps,
+  KvcDropdownProps,
+  KvcFieldProps,
+  KvcFileSelectProps,
+  KvcRadioProps,
+  KvcTableProps,
+  KvcTextInputProps,
+  KvcTextareaProps,
+  KvcTimePickerProps,
+  KvcTabProps,
+  KvcTabPaneProps,
+  KvcWrapProps,
+} from './component-types'
+
+export interface KintoneVueGlobalComponents {
+  KvcButton: DefineComponent<KvcButtonProps>
+  KvcCheckbox: DefineComponent<KvcCheckboxProps>
+  KvcDatePicker: DefineComponent<KvcDatePickerProps>
+  KvcDateTimePicker: DefineComponent<KvcDateTimePickerProps>
+  KvcDropdown: DefineComponent<KvcDropdownProps>
+  KvcField: DefineComponent<KvcFieldProps>
+  KvcFileSelect: DefineComponent<KvcFileSelectProps>
+  KvcRadio: DefineComponent<KvcRadioProps>
+  KvcRow: DefineComponent
+  KvcTab: DefineComponent<KvcTabProps>
+  KvcTabPane: DefineComponent<KvcTabPaneProps>
+  KvcTable: DefineComponent<KvcTableProps>
+  KvcTextInput: DefineComponent<KvcTextInputProps>
+  KvcTextarea: DefineComponent<KvcTextareaProps>
+  KvcTimePicker: DefineComponent<KvcTimePickerProps>
+  KvcWrap: DefineComponent<KvcWrapProps>
+}
+
+declare module 'vue' {
+  export interface GlobalComponents extends KintoneVueGlobalComponents {}
+}

@@ -32,6 +32,18 @@ onClickOutside(timeRef, () => {
   }
 })
 
+const isNumber = (value: unknown): boolean =>
+  typeof value === 'number' || !isNaN(Number(value))
+
+const $width = computed(() => {
+  console.log(props.width)
+  if (props.width) {
+    return isNumber(props.width) ? `${props.width}px` : props.width
+  } else {
+    return '100%'
+  }
+})
+
 const getSelectedLabel = computed(() => {
   const valueKey = props.itemValue ?? 'value'
   const labelKey = props.itemLabel ?? 'label'
@@ -39,6 +51,7 @@ const getSelectedLabel = computed(() => {
   const found = props.items.find((v) => typeof v === 'object' && v[valueKey] === props.modelValue)
   return found ? found[labelKey] : ''
 })
+
 </script>
 
 <template>
@@ -57,8 +70,8 @@ const getSelectedLabel = computed(() => {
       :disabled="disabled"
       @click="isVisible = true"
     >
-      {{ getSelectedLabel }}
-      <Icon icon="mdi-light:chevron-down" width="24" />
+      <span class="kvc-dropdown-label">{{ getSelectedLabel }}</span>
+      <Icon icon="mdi-light:chevron-down" width="24" style="min-width: 24px;" />
     </button>
 
     <UtilSelectList

@@ -27,6 +27,14 @@ const rows = ref([
   { 'columnA': 'AAA5', 'columnB': 'BBB5', 'columnC': 'CCC5' },
 ])
 
+const tab = ref('aaa')
+const tabs = ref([
+  { label: 'TabA', name: 'tab-a' },
+  { label: 'TabB', name: 'tab-b' },
+  { label: 'TabC', name: 'tab-c' },
+  { label: 'TabD', name: 'tab-d' },
+])
+
 const onClickButton = () => {
   alert('clicked')
 }
@@ -61,7 +69,7 @@ const onClickButton = () => {
     <KvcRow>
       <KvcField>
         <template #label>text</template>
-        <KvcTextInput  v-model="input" />
+        <KvcTextInput width="200px" v-model="input" />
       </KvcField>
       <KvcField>
         <template #label>text</template>
@@ -215,6 +223,38 @@ const onClickButton = () => {
           <template #columnB="{row, column}">{{ row[column] }}</template>
           <template #columnC="{row, column}">{{ row[column] }}</template>
         </KvcTable>
+      </KvcField>
+    </KvcRow>
+    <KvcRow>
+      <KvcField>
+        <template #label>Tab</template>
+        <KvcTab v-model="tab">
+          <KvcTabPane label="AAA" name="aaa">
+            <KvcRow>AAA</KvcRow>
+          </KvcTabPane>
+          <KvcTabPane label="BBB" name="bbb">
+            <KvcRow>BBB</KvcRow>
+          </KvcTabPane>
+          <KvcTabPane label="CCC" name="ccc">
+            <KvcRow>CCC</KvcRow>
+          </KvcTabPane>
+        </KvcTab>
+      </KvcField>
+    </KvcRow>
+    <KvcRow>
+      <KvcField>
+        <template #label>Tab(small)</template>
+        <KvcTab small v-model="tab">
+          <KvcTabPane label="AAA" name="aaa">
+            <KvcRow>AAA</KvcRow>
+          </KvcTabPane>
+          <KvcTabPane label="BBB" name="bbb">
+            <KvcRow>BBB</KvcRow>
+          </KvcTabPane>
+          <KvcTabPane label="CCC" name="ccc">
+            <KvcRow>CCC</KvcRow>
+          </KvcTabPane>
+        </KvcTab>
       </KvcField>
     </KvcRow>
   </KvcWrap>
