@@ -17,7 +17,6 @@ const isNumber = (value: unknown): boolean =>
   typeof value === 'number' || !isNaN(Number(value))
 
 const $width = computed(() => {
-  console.log(props.width)
   if (props.width) {
     return isNumber(props.width) ? `${props.width}px` : props.width
   } else {
