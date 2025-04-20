@@ -20,7 +20,7 @@ const slots = useSlots()
 
 const tabPanes = computed<KvcTabPaneProps[]>(() => {
   const panes: KvcTabPaneProps[] = []
-  const children = slots.default?.() || []
+  const children = slots.default ? slots.default({}) : []
 
   children.forEach((vnode: VNode) => {
     const props = vnode.props as { label?: string; name?: string } | undefined
