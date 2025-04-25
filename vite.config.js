@@ -18,6 +18,13 @@ export default defineConfig({
     }
   },
   build: {
+    minify: process.env.NODE_ENV === 'production' ? 'esbuild' : false,
+    terserOptions: process.env.NODE_ENV === 'production' ? {
+      compress: {
+        drop_console: true, // すべてのconsoleを削除
+        pure_funcs: ['console.log', 'console.info', 'console.debug'], // console.errorは除外
+      },
+    } : {},
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'kintone-vue3-component',

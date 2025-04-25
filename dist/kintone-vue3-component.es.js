@@ -1561,7 +1561,7 @@ const af = ["onClick", "onMouseover"], sf = { class: "kvc-select-list-item-icon-
       o.value || (u.value = !1, o.value = !1);
     });
     const l = (p) => typeof p == "number" || !isNaN(Number(p));
-    Te(() => (console.log(r.width), r.width ? l(r.width) ? `${r.width}px` : r.width : "100%"));
+    Te(() => r.width ? l(r.width) ? `${r.width}px` : r.width : "100%");
     const f = Te(() => {
       const p = r.itemValue ?? "value", m = r.itemLabel ?? "label", g = r.items.find((b) => typeof b == "object" && b[p] === r.modelValue);
       return g ? g[m] : "";
@@ -1829,7 +1829,7 @@ const af = ["onClick", "onMouseover"], sf = { class: "kvc-select-list-item-icon-
     const r = e, n = t, i = Te({
       get: () => r.modelValue ?? "",
       set: (c) => n("update:modelValue", c)
-    }), o = (c) => typeof c == "number" || !isNaN(Number(c)), u = Te(() => (console.log(r.width), r.width ? o(r.width) ? `${r.width}px` : r.width : "100%"));
+    }), o = (c) => typeof c == "number" || !isNaN(Number(c)), u = Te(() => r.width ? o(r.width) ? `${r.width}px` : r.width : "100%");
     return (c, s) => c.readOnly ? (X(), J("p", {
       key: 0,
       class: ze(["kvc-field-value", { "kvc-field-value-nonstyled": c.nonstyled }])
