@@ -1,5 +1,7 @@
 export { default as KvcWrap } from './kvc/wrap.vue';
 export { default as KvcRow } from './kvc/row.vue';
+export { default as KvcSpinner } from './kvc/spinner.vue';
+export { default as KvcDialog } from './kvc/dialog.vue';
 export { default as KvcTable } from './kvc/table.vue';
 export { default as KvcDropdown } from './kvc/dropdown.vue';
 export { default as KvcButton } from './kvc/button.vue';
@@ -16,6 +18,8 @@ export { default as KvcTab } from './kvc/tab/index.vue';
 export { default as KvcTabPane } from './kvc/tab/pane.vue';
 export type { default as KvcWrapType } from './kvc/wrap.vue';
 export type { default as KvcRowType } from './kvc/row.vue';
+export type { default as KvcSpinnerType } from './kvc/spinner.vue';
+export type { default as KvcDialogType } from './kvc/dialog.vue';
 export type { default as KvcTableType } from './kvc/table.vue';
 export type { default as KvcDropdownType } from './kvc/dropdown.vue';
 export type { default as KvcButtonType } from './kvc/button.vue';
