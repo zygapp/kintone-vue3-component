@@ -74,6 +74,9 @@ app.use(KintoneVueComponent);
 | ---------------------------------------------- | -------------------------- | ------------------------ |
 | [KvcWrap](docs/KvcWrap.md)                     | form/div 切り替えラッパー  | -                        |
 | [KvcRow](docs/KvcRow.md)                       | 入力行レイアウトラッパー   | -                        |
+| [KvcTab](docs/KvcTab.md)                       | タブ切り替えコンポーネント | -                        |
+| [KvcSpinner](docs/KvcSpinner.md)               | スピナーコンポーネント     | -                        |
+| [KvcDialog](docs/KvcDialog.md)                 | ダイアログコンポーネント   | -                        |
 | [KvcField](docs/KvcField.md)                   | 入力フィールドラッパー     | -                        |
 | [KvcButton](docs/KvcButton.md)                 | スタイル付きボタン         | -                        |
 | [KvcCheckbox](docs/KvcCheckbox.md)             | 複数選択チェックボックス   | `CHECK_BOX`              |

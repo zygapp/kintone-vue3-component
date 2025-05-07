@@ -1,6 +1,7 @@
 # KvcTextInput
 
 ## 概要
+
 基本的なテキスト入力コンポーネントです。
 
 ## 使用例
@@ -13,24 +14,22 @@
 
 ## Props
 
-| プロパティ | 型 | デフォルト | 説明 |
-|------------|--------------------|------------|---------------------|
-| `modelValue` | `string` | `''` | バインド値 |
-| `nonstyled` | `boolean` | `false` | スタイル無効化 |
-| `readOnly` | `boolean` | `false` | 読み取り専用 |
-| `width` | `string` | `'150px'` | 幅設定 |
-| `type` | `string` | `'text'` | 入力タイプ |
-| `placeholder` | `string` | `''` | プレースホルダ |
-| `min` | `string \| number` | - | 最小値 |
-| `max` | `string \| number` | - | 最大値 |
+| プロパティ    | 型                 | デフォルト | 説明           |
+| ------------- | ------------------ | ---------- | -------------- |
+| `modelValue`  | `string`           | `''`       | バインド値     |
+| `nonstyled`   | `boolean`          | `false`    | スタイル無効化 |
+| `readOnly`    | `boolean`          | `false`    | 読み取り専用   |
+| `width`       | `string`           | `'150px'`  | 幅設定         |
+| `type`        | `string`           | `'text'`   | 入力タイプ     |
+| `placeholder` | `string`           | `''`       | プレースホルダ |
+| `min`         | `string \| number` | -          | 最小値         |
+| `max`         | `string \| number` | -          | 最大値         |
 
 ## Events
 
-| イベント | 説明 |
-|----------|------------------|
+| イベント            | 説明             |
+| ------------------- | ---------------- |
 | `update:modelValue` | 入力変更時に発火 |
-
-
 
 ---
 
