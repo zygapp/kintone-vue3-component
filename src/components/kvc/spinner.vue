@@ -27,7 +27,7 @@ const htmlText = computed(() => (props.text || '').replace('\n', '<br>'))
 </script>
 
 <template>
-  <div class="kvc-spinner-wrapper">
+  <div v-show="modelValue" class="kvc-spinner-wrapper">
     <div class="kvc-spinner">
       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
         <g>
