@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { KvcButtonProps } from '@/types/component-types'
-defineProps<KvcButtonProps>()
+withDefaults(defineProps<KvcButtonProps>(), {
+  small: false
+})
 </script>
 
 <template>
@@ -8,7 +10,7 @@ defineProps<KvcButtonProps>()
     type="button"
     class="kvc-button"
     :class="{
-      'kvc-button-sm': sm,
+      'kvc-button-sm': small,
       'kvc-button-normal': color === 'normal',
       'kvc-button-success': color === 'success',
       'kvc-button-save': color === 'save',

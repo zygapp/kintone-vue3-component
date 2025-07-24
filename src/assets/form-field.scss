@@ -83,4 +83,13 @@
     // .kvc-field-suffix {
     // }
   }
+
+  .kvc-field {
+    .kvc-field-input {
+      min-width: 100% !important;
+    }
+    .kvc-field-text {
+      min-width: 100% !important;
+    }
+  }
 }

@@ -24,7 +24,7 @@ export interface KvcSelectListProps {
 
 // KvcButton
 export interface KvcButtonProps {
-  sm?: boolean;
+  small?: boolean;
   color?: '' | 'normal' | 'success' | 'save' | 'error';
 }
 
@@ -132,6 +132,10 @@ export interface KvcTableProps {
   modelValue: Record<string, any>[];
   hideOperations?: boolean;
   recordUrl?: string | null;
+  draggable: boolean;
+  animation: number;
+  minRows?: number;
+  maxRows?: number;
 }
 
 
@@ -169,6 +173,8 @@ export interface KvcTimePickerProps {
 export interface KvcTabProps {
   small?: boolean
   modelValue: string
+  width?: string|number
+  height?: string|number
 }
 
 export interface KvcTabPaneProps {

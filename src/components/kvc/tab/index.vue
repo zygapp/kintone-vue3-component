@@ -64,6 +64,10 @@ const tabPanes = computed<KvcTabPaneProps[]>(() => {
       :class="{
         'kvc-tab-content-small': small,
       }"
+      :style="{
+        minWidth: width,
+        minHeight: height,
+      }"
     >
       <slot></slot>
     </div>

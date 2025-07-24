@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
 const input = ref('abc')
@@ -28,16 +28,6 @@ const rows = ref([
 ])
 
 const tab = ref('aaa')
-const tabs = ref([
-  { label: 'TabA', name: 'tab-a' },
-  { label: 'TabB', name: 'tab-b' },
-  { label: 'TabC', name: 'tab-c' },
-  { label: 'TabD', name: 'tab-d' },
-])
-
-const onClickButton = () => {
-  alert('clicked')
-}
 </script>
 
 <template>
@@ -46,7 +36,7 @@ const onClickButton = () => {
     <KvcRow>
       <KvcField required>
         <template #label>Buttons</template>
-        <KvcButton @click="onClickButton">aaa</KvcButton>
+        <KvcButton>aaa</KvcButton>
         <KvcButton color="normal">aaa</KvcButton>
         <KvcButton color="success">aaa</KvcButton>
         <KvcButton color="save">aaa</KvcButton>
@@ -58,12 +48,12 @@ const onClickButton = () => {
     <KvcRow>
       <KvcField>
         <template #label>Small Buttons</template>
-        <KvcButton sm>aaa</KvcButton>
-        <KvcButton sm color="normal">aaa</KvcButton>
-        <KvcButton sm color="success">aaa</KvcButton>
-        <KvcButton sm color="save">aaa</KvcButton>
-        <KvcButton sm color="error">aaa</KvcButton>
-        <KvcButton sm disabled>aaa</KvcButton>
+        <KvcButton small>aaa</KvcButton>
+        <KvcButton small color="normal">aaa</KvcButton>
+        <KvcButton small color="success">aaa</KvcButton>
+        <KvcButton small color="save">aaa</KvcButton>
+        <KvcButton small color="error">aaa</KvcButton>
+        <KvcButton small disabled>aaa</KvcButton>
       </KvcField>
     </KvcRow>
     <KvcRow>
@@ -196,7 +186,10 @@ const onClickButton = () => {
       <KvcField>
         <template #label>Subtable</template>
         <KvcTable
+          draggable
           :columns="columns"
+          :min-rows="3"
+          :max-rows="6"
           v-model="rows"
         >
           <template #columnA="{row, column}">
@@ -228,7 +221,7 @@ const onClickButton = () => {
     <KvcRow>
       <KvcField>
         <template #label>Tab</template>
-        <KvcTab v-model="tab">
+        <KvcTab v-model="tab" width="800px">
           <KvcTabPane label="AAA" name="aaa">
             <KvcRow>AAA</KvcRow>
           </KvcTabPane>

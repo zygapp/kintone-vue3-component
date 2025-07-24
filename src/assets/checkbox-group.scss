@@ -9,6 +9,7 @@
     width: fit-content;
     align-items: flex-start;
     flex-direction: row;
+    flex-wrap: wrap;
 
     &.kvc-checkbox-group-column,
     &.kvc-radio-group-column {
@@ -32,6 +33,7 @@
       outline-style: solid;
       min-height: 24px;
       line-height: 1.2;
+      white-space: nowrap;
 
       &:focus-within {
         outline-width: 1px;

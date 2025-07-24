@@ -1,4 +1,4 @@
-import '@/style.scss';
+import './style.scss';
 import * as components from './components';
 import type { App, Plugin, Component } from 'vue'
 

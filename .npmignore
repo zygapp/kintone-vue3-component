@@ -1,0 +1,9 @@
+.claude
+node_modules
+src
+test
+
+GEMINI.md
+index.html
+vite.config.js
+yarn.lock
