@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// import { Spinner } from '@zygapp/kintone-vue3-component'
+import { Spinner } from '../../src'
 import { ref } from 'vue'
 
 const input = ref('abc')
@@ -28,6 +30,19 @@ const rows = ref([
 ])
 
 const tab = ref('aaa')
+
+const onClickSpinnerOpen = () => {
+  const $spinner = new Spinner()
+  $spinner.open('Loading...')
+
+  setTimeout(() => {
+    $spinner.update('new Loading...')
+  }, 1000)
+
+  setTimeout(() => {
+    $spinner.close()
+  }, 3000)
+}
 </script>
 
 <template>
@@ -36,7 +51,7 @@ const tab = ref('aaa')
     <KvcRow>
       <KvcField required>
         <template #label>Buttons</template>
-        <KvcButton>aaa</KvcButton>
+        <KvcButton @click="onClickSpinnerOpen">aaa</KvcButton>
         <KvcButton color="normal">aaa</KvcButton>
         <KvcButton color="success">aaa</KvcButton>
         <KvcButton color="save">aaa</KvcButton>

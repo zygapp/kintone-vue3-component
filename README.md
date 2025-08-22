@@ -75,7 +75,6 @@ app.use(KintoneVueComponent);
 | [KvcWrap](<REPO_BASE>/KvcWrap.md)                     | form/div 切り替えラッパー  | -                        |
 | [KvcRow](<REPO_BASE>/KvcRow.md)                       | 入力行レイアウトラッパー   | -                        |
 | [KvcTab](<REPO_BASE>/KvcTab.md)                       | タブ切り替えコンポーネント | -                        |
-| [KvcSpinner](<REPO_BASE>/KvcSpinner.md)               | スピナーコンポーネント     | -                        |
 | [KvcDialog](<REPO_BASE>/KvcDialog.md)                 | ダイアログコンポーネント   | -                        |
 | [KvcField](<REPO_BASE>/KvcField.md)                   | 入力フィールドラッパー     | -                        |
 | [KvcGroup](<REPO_BASE>/KvcGroup.md)                   | グループコンテナー         | `GROUP`                  |
@@ -91,3 +90,5 @@ app.use(KintoneVueComponent);
 | [KvcDateTimePicker](<REPO_BASE>/KvcDateTimePicker.md) | 日付＋時間複合選択         | `DATE_TIME`              |
 | [KvcTable](<REPO_BASE>/KvcTable.md)                   | 行追加・削除可能なテーブル | `SUBTABLE`               |
 | [KvcFileSelect](<REPO_BASE>/KvcFileSelect.md)         | ファイル選択・アップロード | `FILE`                   |
+| [KvcSpinner](<REPO_BASE>/KvcSpinner.md)               | スピナーコンポーネント     | -                        |
+| [Spinner](<REPO_BASE>/<MtdSpinner.md)                 | ローディングスピナー       | -                        |
