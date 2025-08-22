@@ -72,6 +72,22 @@ export interface KvcDropdownProps {
 }
 
 
+// KvcAutocomplete
+export interface KvcAutocompleteProps {
+  width?: string | number;
+  nonstyled?: boolean;
+  disabled?: boolean;
+  readOnly?: boolean;
+  items: (KvcItemBase | string | number)[];
+  itemLabel?: string;
+  itemValue?: string;
+  itemDisabled?: string;
+  modelValue: string | number | null;
+  clearable?: boolean;
+  placeholder?: string;
+}
+
+
 // KvcField
 export interface KvcFieldProps {
   required?: boolean;

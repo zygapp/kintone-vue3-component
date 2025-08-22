@@ -56,6 +56,7 @@ const tab = ref('aaa')
         <KvcButton small disabled>aaa</KvcButton>
       </KvcField>
     </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>text</template>
@@ -70,6 +71,7 @@ const tab = ref('aaa')
         <KvcTextInput read-only v-model="input" />
       </KvcField>
     </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>textarea</template>
@@ -84,6 +86,7 @@ const tab = ref('aaa')
         <KvcTextarea read-only v-model="input" />
       </KvcField>
     </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>checkbox</template>
@@ -98,6 +101,7 @@ const tab = ref('aaa')
         <KvcCheckbox read-only v-model="checkbox" :items="items" />
       </KvcField>
     </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>radio button</template>
@@ -112,6 +116,7 @@ const tab = ref('aaa')
         <KvcRadio read-only v-model="radio" :items="items" />
       </KvcField>
     </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>Dropdown</template>
@@ -126,6 +131,22 @@ const tab = ref('aaa')
         <KvcDropdown read-only v-model="dropdown" :items="items" />
       </KvcField>
     </KvcRow>
+
+    <KvcRow>
+      <KvcField>
+        <template #label>AutoComplete</template>
+        <KvcAutocomplete v-model="dropdown" :items="items" />
+      </KvcField>
+      <KvcField>
+        <template #label>AutoComplete</template>
+        <KvcAutocomplete disabled v-model="dropdown" :items="items" />
+      </KvcField>
+      <KvcField>
+        <template #label>AutoComplete</template>
+        <KvcAutocomplete read-only v-model="dropdown" :items="items" />
+      </KvcField>
+    </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>date picker</template>
@@ -140,6 +161,7 @@ const tab = ref('aaa')
         <KvcDatePicker read-only v-model="date" />
       </KvcField>
     </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>time picker</template>
@@ -154,6 +176,7 @@ const tab = ref('aaa')
         <KvcTimePicker read-only v-model="time" />
       </KvcField>
     </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>datetime picker</template>
@@ -168,6 +191,7 @@ const tab = ref('aaa')
         <KvcDateTimePicker read-only v-model="datetime" />
       </KvcField>
     </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>file single select</template>
@@ -182,6 +206,7 @@ const tab = ref('aaa')
         <KvcFileSelect v-model="files" :auto-upload="false" read-only multiple />
       </KvcField>
     </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>Subtable</template>
@@ -204,6 +229,7 @@ const tab = ref('aaa')
         </KvcTable>
       </KvcField>
     </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>Subtable</template>
@@ -218,6 +244,7 @@ const tab = ref('aaa')
         </KvcTable>
       </KvcField>
     </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>Tab</template>
@@ -234,6 +261,7 @@ const tab = ref('aaa')
         </KvcTab>
       </KvcField>
     </KvcRow>
+
     <KvcRow>
       <KvcField>
         <template #label>Tab(small)</template>

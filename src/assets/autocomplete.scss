@@ -1,0 +1,87 @@
+.kvc-autocomplete {
+  position: relative;
+  display: inline-block;
+
+  .kvc-autocomplete-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .kvc-autocomplete-input {
+      height: 40px;
+      padding: 0 40px 0 8px;
+      font-size: 14px;
+      line-height: 1.5;
+      border: 1px solid var(--kvc-color-base);
+      background-color: #fff;
+      box-shadow: 2px 2px 4px var(--kvc-color-base-light) inset,
+        -2px -2px 4px var(--kvc-color-base-light) inset;
+      outline: 0;
+
+      &:focus {
+        border-color: var(--kvc-color-primary);
+      }
+
+      &:disabled {
+        background-color: var(--kvc-color-disabled-background);
+        color: var(--kvc-color-disabled-text);
+        cursor: not-allowed;
+      }
+    }
+
+    .kvc-autocomplete-icons {
+      position: absolute;
+      right: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      .kvc-autocomplete-clear {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        border: none;
+        border-radius: 50%;
+        background-color: transparent;
+        color: var(--kvc-color-secondary);
+        cursor: pointer;
+        outline: 0;
+
+        &:hover {
+          background-color: var(--kvc-color-base-light);
+          color: var(--kvc-color-secondary-dark);
+        }
+
+        &:focus {
+          outline: 1px solid var(--kvc-color-primary);
+        }
+      }
+
+      .kvc-autocomplete-arrow {
+        color: var(--kvc-color-secondary);
+        transition: transform 0.2s;
+
+        &.is-active {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .kvc-autocomplete-no-results {
+    position: absolute;
+    white-space: nowrap;
+    z-index: 10;
+    margin-top: 2px;
+    padding: 8px 16px;
+    min-width: 100%;
+    background-color: white;
+    border: 1px solid var(--kvc-color-base);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: var(--kvc-color-secondary);
+  }
+}

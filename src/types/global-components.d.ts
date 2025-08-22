@@ -5,6 +5,7 @@ import {
   KvcDatePickerProps,
   KvcDateTimePickerProps,
   KvcDropdownProps,
+  KvcAutocompleteProps,
   KvcFieldProps,
   KvcFileSelectProps,
   KvcRadioProps,
@@ -23,6 +24,7 @@ export interface KintoneVueGlobalComponents {
   KvcDatePicker: DefineComponent<KvcDatePickerProps>
   KvcDateTimePicker: DefineComponent<KvcDateTimePickerProps>
   KvcDropdown: DefineComponent<KvcDropdownProps>
+  KvcAutocomplete: DefineComponent<KvcAutocompleteProps>
   KvcField: DefineComponent<KvcFieldProps>
   KvcFileSelect: DefineComponent<KvcFileSelectProps>
   KvcRadio: DefineComponent<KvcRadioProps>
