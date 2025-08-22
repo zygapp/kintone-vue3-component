@@ -71,7 +71,13 @@ const parsedItems = computed(() => {
   })
 
   console.log($items)
-  return $items
+  return [
+    {
+      [props.itemLabel]: '---',
+      [props.itemValue]: '',
+    },
+    ...$items
+  ]
 })
 </script>
 
