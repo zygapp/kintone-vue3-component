@@ -5,7 +5,16 @@ import { onClickOutside } from '@vueuse/core'
 import { KvcDropdownProps } from '@/types/component-types'
 import UtilSelectList from './utility/SelectList.vue'
 
-const props = defineProps<KvcDropdownProps>()
+const props = withDefaults(defineProps<KvcDropdownProps>(), {
+  items: () => ([]),
+  width: 100,
+  disabled: false,
+  readOnly: false,
+  nonstyled: false,
+  itemLabel: 'label',
+  itemValue: 'value',
+  itemDisabled: 'disabled',
+})
 
 const emits = defineEmits<{
   (e: 'update:modelValue', value: string | number | null): void
@@ -20,16 +29,14 @@ const inputValue = computed({
   }
 })
 
-const isFocused = ref(false)
 const isVisible = ref(false)
 const buttonRef = ref<HTMLElement | null>(null)
-const timeRef = ref<HTMLElement | null>(null)
+const selectListRef = ref<HTMLElement | null>(null)
+const dropdownRef = ref<HTMLElement | null>(null)
 
-onClickOutside(timeRef, () => {
-  if (!isFocused.value) {
-    isVisible.value = false
-    isFocused.value = false
-  }
+// ドロップダウン全体の外側をクリックした時に閉じる
+onClickOutside(dropdownRef, () => {
+  isVisible.value = false
 })
 
 const isNumber = (value: unknown): boolean =>
@@ -39,7 +46,7 @@ const $width = computed(() => {
   if (props.width) {
     return isNumber(props.width) ? `${props.width}px` : props.width
   } else {
-    return '100%'
+    return 'fit-content'
   }
 })
 
@@ -47,10 +54,25 @@ const getSelectedLabel = computed(() => {
   const valueKey = props.itemValue ?? 'value'
   const labelKey = props.itemLabel ?? 'label'
 
-  const found = props.items.find((v) => typeof v === 'object' && v[valueKey] === props.modelValue)
+  const found = parsedItems.value.find((v) => typeof v === 'object' && v[valueKey] === props.modelValue)
   return found ? found[labelKey] : ''
 })
 
+const parsedItems = computed(() => {
+  const $items = props.items.map((item) => {
+    if (typeof item === 'object' && item !== null) {
+      return JSON.parse(JSON.stringify(item))
+    } else {
+      return {
+        [props.itemLabel]: item,
+        [props.itemValue]: item,
+      }
+    }
+  })
+
+  console.log($items)
+  return $items
+})
 </script>
 
 <template>
@@ -58,16 +80,18 @@ const getSelectedLabel = computed(() => {
     v-if="readOnly"
     class="kvc-field-value"
     :class="{ 'kvc-field-value-nonstyled': nonstyled }"
+    :style="{ width: $width }"
     v-html="modelValue"
   ></p>
 
-  <div v-else class="kvc-dropdown">
+  <div v-else class="kvc-dropdown" ref="dropdownRef">
     <button
       ref="buttonRef"
       type="button"
       class="kvc-dropdown-button"
       :disabled="disabled"
-      @click="isVisible = true"
+      :style="{ width: $width }"
+      @click="isVisible = !isVisible"
     >
       <span class="kvc-dropdown-label">{{ getSelectedLabel }}</span>
       <Icon icon="mdi-light:chevron-down" width="24" style="min-width: 24px;" />
@@ -77,8 +101,8 @@ const getSelectedLabel = computed(() => {
       v-if="!(readOnly || disabled)"
       v-show="isVisible"
       v-model="inputValue"
-      ref="timeRef"
-      :items="items"
+      ref="selectListRef"
+      :items="parsedItems"
       :labelKey="itemLabel"
       :valueKey="itemValue"
       @change="isVisible = false"

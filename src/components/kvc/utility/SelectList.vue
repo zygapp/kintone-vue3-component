@@ -3,7 +3,11 @@ import { onMounted, computed, ref } from 'vue'
 import { Icon } from '@iconify/vue'
 import { KvcSelectListProps, SelectListItem } from '@/types/component-types'
 
-const props = defineProps<KvcSelectListProps>()
+const props = withDefaults(defineProps<KvcSelectListProps>(), {
+  items: () => ([]),
+  labelKey: 'label',
+  valueKey: 'value',
+})
 
 const emits = defineEmits<{
   (e: 'update:modelValue', value: string | number): void
@@ -36,6 +40,7 @@ const scrollToValue = (value: string | number | null) => {
 onMounted(() => scrollToValue(props.modelValue))
 
 const onSelectItem = (value: string | number) => {
+  console.log('onSelectItem', value)
   emits('update:modelValue', value)
   emits('change', value)
 }
