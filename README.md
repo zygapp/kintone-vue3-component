@@ -6,7 +6,7 @@ kintone カスタマイズや業務アプリ開発で使いやすいよう設計
 ## 📦 インストール
 
 ```bash
-npm install https://git.zygapp.org/kintone-utils/kintone-vue3-component.git
+npm install @zygapp/kintone-vue3-component
 ```
 
 ## 🔧 プラグインとして利用する
@@ -70,22 +70,22 @@ app.use(KintoneVueComponent);
 
 ## 📚 コンポーネント一覧
 
-| コンポーネント名                               | 概要                       | kintone フィールドタイプ |
-| ---------------------------------------------- | -------------------------- | ------------------------ |
-| [KvcWrap](docs/KvcWrap.md)                     | form/div 切り替えラッパー  | -                        |
-| [KvcRow](docs/KvcRow.md)                       | 入力行レイアウトラッパー   | -                        |
-| [KvcTab](docs/KvcTab.md)                       | タブ切り替えコンポーネント | -                        |
-| [KvcSpinner](docs/KvcSpinner.md)               | スピナーコンポーネント     | -                        |
-| [KvcDialog](docs/KvcDialog.md)                 | ダイアログコンポーネント   | -                        |
-| [KvcField](docs/KvcField.md)                   | 入力フィールドラッパー     | -                        |
-| [KvcButton](docs/KvcButton.md)                 | スタイル付きボタン         | -                        |
-| [KvcCheckbox](docs/KvcCheckbox.md)             | 複数選択チェックボックス   | `CHECK_BOX`              |
-| [KvcRadio](docs/KvcRadio.md)                   | 単一選択ラジオボタン       | `RADIO_BUTTON`           |
-| [KvcTextInput](docs/KvcTextInput.md)           | テキスト入力フィールド     | `SINGLE_LINE_TEXT`       |
-| [KvcTextarea](docs/KvcTextarea.md)             | テキストエリア             | `MULTI_LINE_TEXT`        |
-| [KvcDropdown](docs/KvcDropdown.md)             | ドロップダウンセレクト     | `DROP_DOWN`              |
-| [KvcDatePicker](docs/KvcDatePicker.md)         | 日付選択コンポーネント     | `DATE`                   |
-| [KvcTimePicker](docs/KvcTimePicker.md)         | 時間選択コンポーネント     | `TIME`                   |
-| [KvcDateTimePicker](docs/KvcDateTimePicker.md) | 日付＋時間複合選択         | `DATE_TIME`              |
-| [KvcTable](docs/KvcTable.md)                   | 行追加・削除可能なテーブル | `SUBTABLE`               |
-| [KvcFileSelect](docs/KvcFileSelect.md)         | ファイル選択・アップロード | `FILE`                   |
+| コンポーネント名                                      | 概要                       | kintone フィールドタイプ |
+| ----------------------------------------------------- | -------------------------- | ------------------------ |
+| [KvcWrap](<REPO_BASE>/KvcWrap.md)                     | form/div 切り替えラッパー  | -                        |
+| [KvcRow](<REPO_BASE>/KvcRow.md)                       | 入力行レイアウトラッパー   | -                        |
+| [KvcTab](<REPO_BASE>/KvcTab.md)                       | タブ切り替えコンポーネント | -                        |
+| [KvcSpinner](<REPO_BASE>/KvcSpinner.md)               | スピナーコンポーネント     | -                        |
+| [KvcDialog](<REPO_BASE>/KvcDialog.md)                 | ダイアログコンポーネント   | -                        |
+| [KvcField](<REPO_BASE>/KvcField.md)                   | 入力フィールドラッパー     | -                        |
+| [KvcButton](<REPO_BASE>/KvcButton.md)                 | スタイル付きボタン         | -                        |
+| [KvcCheckbox](<REPO_BASE>/KvcCheckbox.md)             | 複数選択チェックボックス   | `CHECK_BOX`              |
+| [KvcRadio](<REPO_BASE>/KvcRadio.md)                   | 単一選択ラジオボタン       | `RADIO_BUTTON`           |
+| [KvcTextInput](<REPO_BASE>/KvcTextInput.md)           | テキスト入力フィールド     | `SINGLE_LINE_TEXT`       |
+| [KvcTextarea](<REPO_BASE>/KvcTextarea.md)             | テキストエリア             | `MULTI_LINE_TEXT`        |
+| [KvcDropdown](<REPO_BASE>/KvcDropdown.md)             | ドロップダウンセレクト     | `DROP_DOWN`              |
+| [KvcDatePicker](<REPO_BASE>/KvcDatePicker.md)         | 日付選択コンポーネント     | `DATE`                   |
+| [KvcTimePicker](<REPO_BASE>/KvcTimePicker.md)         | 時間選択コンポーネント     | `TIME`                   |
+| [KvcDateTimePicker](<REPO_BASE>/KvcDateTimePicker.md) | 日付＋時間複合選択         | `DATE_TIME`              |
+| [KvcTable](<REPO_BASE>/KvcTable.md)                   | 行追加・削除可能なテーブル | `SUBTABLE`               |
+| [KvcFileSelect](<REPO_BASE>/KvcFileSelect.md)         | ファイル選択・アップロード | `FILE`                   |

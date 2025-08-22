@@ -35,4 +35,4 @@
 
 ---
 
-[◀ 戻る](../README.md)
+[◀ 戻る](<REPO_BASE>/README.md)

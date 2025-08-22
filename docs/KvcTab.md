@@ -54,4 +54,4 @@ const active = ref("tab1");
 
 ---
 
-[◀ 戻る](../README.md)
+[◀ 戻る](<REPO_BASE>/README.md)
