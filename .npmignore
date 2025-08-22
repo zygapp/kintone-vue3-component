@@ -4,6 +4,8 @@ src
 test
 
 GEMINI.md
+CLAUDE.md
 index.html
 vite.config.js
 yarn.lock
+images/*
