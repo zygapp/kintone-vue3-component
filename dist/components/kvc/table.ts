@@ -19,13 +19,13 @@ declare function __VLS_template(): {
 };
 type __VLS_TemplateResult = ReturnType<typeof __VLS_template>;
 declare const __VLS_component: import('vue').DefineComponent<KvcTableProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {} & {
-    "update:modelValue": (value: any[]) => any;
     delete: (value: any[]) => any;
     add: (value: any[], index: number) => any;
+    "update:modelValue": (value: any[]) => any;
 }, string, import('vue').PublicProps, Readonly<KvcTableProps> & Readonly<{
-    "onUpdate:modelValue"?: ((value: any[]) => any) | undefined;
     onDelete?: ((value: any[]) => any) | undefined;
     onAdd?: ((value: any[], index: number) => any) | undefined;
+    "onUpdate:modelValue"?: ((value: any[]) => any) | undefined;
 }>, {
     draggable: boolean;
     animation: number;

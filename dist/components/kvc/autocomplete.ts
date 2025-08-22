@@ -1,21 +1,27 @@
-import { KvcDropdownProps } from '../../types/component-types';
-declare const _default: import('vue').DefineComponent<KvcDropdownProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {} & {
+import { KvcAutocompleteProps } from '../../types/component-types';
+declare const _default: import('vue').DefineComponent<KvcAutocompleteProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {} & {
     "update:modelValue": (value: string | number | null) => any;
     change: (value: string | number | null) => any;
-}, string, import('vue').PublicProps, Readonly<KvcDropdownProps> & Readonly<{
+    input: (value: string) => any;
+}, string, import('vue').PublicProps, Readonly<KvcAutocompleteProps> & Readonly<{
     "onUpdate:modelValue"?: ((value: string | number | null) => any) | undefined;
     onChange?: ((value: string | number | null) => any) | undefined;
+    onInput?: ((value: string) => any) | undefined;
 }>, {
     width: string | number;
     readOnly: boolean;
     disabled: boolean;
-    items: import('../../types/component-types').KvcItemBase[];
+    items: (import('../../types/component-types').KvcItemBase | string | number)[];
     nonstyled: boolean;
     itemLabel: string;
     itemValue: string;
+    itemDisabled: string;
+    clearable: boolean;
+    placeholder: string;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {
-    dropdownRef: HTMLDivElement;
     buttonRef: HTMLButtonElement;
+    autocompleteRef: HTMLDivElement;
+    inputRef: HTMLInputElement;
     selectListRef: import('vue').CreateComponentPublicInstanceWithMixins<Readonly<import('../../types/component-types').KvcSelectListProps> & Readonly<{
         "onUpdate:modelValue"?: ((value: string | number) => any) | undefined;
         onChange?: ((value: string | number) => any) | undefined;

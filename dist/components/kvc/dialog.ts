@@ -1,26 +1,32 @@
-interface KvcDialog {
-    modelValue: boolean;
-    width?: string | number;
-}
+import { KvcDialogProps } from '../../types/component-types';
 declare function __VLS_template(): {
     attrs: Partial<{}>;
     slots: {
-        header?(_: {}): any;
-        'body-header'?(_: {}): any;
         default?(_: {}): any;
-        'body-footer'?(_: {}): any;
-        footer?(_: {}): any;
     };
     refs: {};
     rootEl: any;
 };
 type __VLS_TemplateResult = ReturnType<typeof __VLS_template>;
-declare const __VLS_component: import('vue').DefineComponent<KvcDialog, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
+declare const __VLS_component: import('vue').DefineComponent<KvcDialogProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     "update:modelValue": (...args: any[]) => void;
-}, string, import('vue').PublicProps, Readonly<KvcDialog> & Readonly<{
+    cancel: (...args: any[]) => void;
+    close: (...args: any[]) => void;
+    confirm: (...args: any[]) => void;
+}, string, import('vue').PublicProps, Readonly<KvcDialogProps> & Readonly<{
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    onCancel?: ((...args: any[]) => any) | undefined;
+    onClose?: ((...args: any[]) => any) | undefined;
+    onConfirm?: ((...args: any[]) => any) | undefined;
 }>, {
     modelValue: boolean;
+    title: string;
+    showIcon: boolean;
+    iconType: "info" | "warning" | "error" | "success" | "question";
+    cancelText: string;
+    confirmText: string;
+    showCancel: boolean;
+    showConfirm: boolean;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;
 declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, __VLS_TemplateResult["slots"]>;
 export default _default;
