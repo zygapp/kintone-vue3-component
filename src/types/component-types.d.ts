@@ -97,6 +97,20 @@ export interface KvcFieldProps {
 }
 
 
+// KvcDialog
+export interface KvcDialogProps {
+  modelValue: boolean;
+  width?: string | number;
+  title?: string;
+  showIcon?: boolean;
+  iconType?: 'info' | 'warning' | 'error' | 'success' | 'question';
+  cancelText?: string;
+  confirmText?: string;
+  showCancel?: boolean;
+  showConfirm?: boolean;
+}
+
+
 // KvcGroup
 export interface KvcGroupProps {
   label?: string;

@@ -1,8 +1,10 @@
 <script setup lang="ts">
 // import { Spinner } from '@zygapp/kintone-vue3-component'
-import { Spinner } from '../../src'
+import { KvcDialog, Spinner } from '../../src'
 import { ref } from 'vue'
 
+const dialog = ref(false)
+const spinner = ref(new Spinner())
 const input = ref('abc')
 const date = ref()
 const time = ref('14:00')
@@ -31,16 +33,27 @@ const rows = ref([
 
 const tab = ref('aaa')
 
-const onClickSpinnerOpen = () => {
-  const $spinner = new Spinner()
-  $spinner.open('Loading...')
+const onClickOpenSpinner = () => {
+  spinner.value.open('Loading...')
 
   setTimeout(() => {
-    $spinner.update('new Loading...')
+    spinner.value.update('new Loading...')
   }, 1000)
 
   setTimeout(() => {
-    $spinner.close()
+    spinner.value.close()
+  }, 3000)
+}
+
+const handleDialogCancel = () => {
+  alert('cancel clicked!')
+}
+
+const handleDialogConfirm = () => {
+  spinner.value.open('Loading...')
+  setTimeout(() => {
+    spinner.value.close()
+    alert('confirm clicked!')
   }, 3000)
 }
 </script>
@@ -48,11 +61,21 @@ const onClickSpinnerOpen = () => {
 <template>
   <h1>test</h1>
   <KvcWrap>
+    <KvcDialog
+      v-model="dialog"
+      title="確認"
+      @cancel="handleDialogCancel"
+      @confirm="handleDialogConfirm"
+    >
+      この操作を実行してもよろしいですか？<br>
+      実行すると、元に戻すことはできません。
+    </KvcDialog>
+
     <KvcRow>
       <KvcField required>
         <template #label>Buttons</template>
-        <KvcButton @click="onClickSpinnerOpen">aaa</KvcButton>
-        <KvcButton color="normal">aaa</KvcButton>
+        <KvcButton @click="onClickOpenSpinner">Spinner Open</KvcButton>
+        <KvcButton color="normal" @click="dialog = true">Dialog Open</KvcButton>
         <KvcButton color="success">aaa</KvcButton>
         <KvcButton color="save">aaa</KvcButton>
         <KvcButton color="error">aaa</KvcButton>

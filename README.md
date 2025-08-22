@@ -70,25 +70,25 @@ app.use(KintoneVueComponent);
 
 ## 📚 コンポーネント一覧
 
-| コンポーネント名                                      | 概要                       | kintone フィールドタイプ |
-| ----------------------------------------------------- | -------------------------- | ------------------------ |
-| [KvcWrap](<REPO_BASE>/KvcWrap.md)                     | form/div 切り替えラッパー  | -                        |
-| [KvcRow](<REPO_BASE>/KvcRow.md)                       | 入力行レイアウトラッパー   | -                        |
-| [KvcTab](<REPO_BASE>/KvcTab.md)                       | タブ切り替えコンポーネント | -                        |
-| [KvcDialog](<REPO_BASE>/KvcDialog.md)                 | ダイアログコンポーネント   | -                        |
-| [KvcField](<REPO_BASE>/KvcField.md)                   | 入力フィールドラッパー     | -                        |
-| [KvcGroup](<REPO_BASE>/KvcGroup.md)                   | グループコンテナー         | `GROUP`                  |
-| [KvcButton](<REPO_BASE>/KvcButton.md)                 | スタイル付きボタン         | -                        |
-| [KvcCheckbox](<REPO_BASE>/KvcCheckbox.md)             | 複数選択チェックボックス   | `CHECK_BOX`              |
-| [KvcRadio](<REPO_BASE>/KvcRadio.md)                   | 単一選択ラジオボタン       | `RADIO_BUTTON`           |
-| [KvcTextInput](<REPO_BASE>/KvcTextInput.md)           | テキスト入力フィールド     | `SINGLE_LINE_TEXT`       |
-| [KvcTextarea](<REPO_BASE>/KvcTextarea.md)             | テキストエリア             | `MULTI_LINE_TEXT`        |
-| [KvcDropdown](<REPO_BASE>/KvcDropdown.md)             | ドロップダウンセレクト     | `DROP_DOWN`              |
-| [KvcAutocomplete](<REPO_BASE>/KvcAutocomplete.md)     | オートコンプリート         | -                        |
-| [KvcDatePicker](<REPO_BASE>/KvcDatePicker.md)         | 日付選択コンポーネント     | `DATE`                   |
-| [KvcTimePicker](<REPO_BASE>/KvcTimePicker.md)         | 時間選択コンポーネント     | `TIME`                   |
-| [KvcDateTimePicker](<REPO_BASE>/KvcDateTimePicker.md) | 日付＋時間複合選択         | `DATE_TIME`              |
-| [KvcTable](<REPO_BASE>/KvcTable.md)                   | 行追加・削除可能なテーブル | `SUBTABLE`               |
-| [KvcFileSelect](<REPO_BASE>/KvcFileSelect.md)         | ファイル選択・アップロード | `FILE`                   |
-| [KvcSpinner](<REPO_BASE>/KvcSpinner.md)               | スピナーコンポーネント     | -                        |
-| [Spinner](<REPO_BASE>/<MtdSpinner.md)                 | ローディングスピナー       | -                        |
+| コンポーネント名                                           | 概要                       | kintone フィールドタイプ |
+| ---------------------------------------------------------- | -------------------------- | ------------------------ |
+| [KvcWrap](<REPO_BASE>/docs/KvcWrap.md)                     | form/div 切り替えラッパー  | -                        |
+| [KvcRow](<REPO_BASE>/docs/KvcRow.md)                       | 入力行レイアウトラッパー   | -                        |
+| [KvcTab](<REPO_BASE>/docs/KvcTab.md)                       | タブ切り替えコンポーネント | -                        |
+| [KvcDialog](<REPO_BASE>/docs/KvcDialog.md)                 | ダイアログコンポーネント   | -                        |
+| [KvcField](<REPO_BASE>/docs/KvcField.md)                   | 入力フィールドラッパー     | -                        |
+| [KvcGroup](<REPO_BASE>/docs/KvcGroup.md)                   | グループコンテナー         | `GROUP`                  |
+| [KvcButton](<REPO_BASE>/docs/KvcButton.md)                 | スタイル付きボタン         | -                        |
+| [KvcCheckbox](<REPO_BASE>/docs/KvcCheckbox.md)             | 複数選択チェックボックス   | `CHECK_BOX`              |
+| [KvcRadio](<REPO_BASE>/docs/KvcRadio.md)                   | 単一選択ラジオボタン       | `RADIO_BUTTON`           |
+| [KvcTextInput](<REPO_BASE>/docs/KvcTextInput.md)           | テキスト入力フィールド     | `SINGLE_LINE_TEXT`       |
+| [KvcTextarea](<REPO_BASE>/docs/KvcTextarea.md)             | テキストエリア             | `MULTI_LINE_TEXT`        |
+| [KvcDropdown](<REPO_BASE>/docs/KvcDropdown.md)             | ドロップダウンセレクト     | `DROP_DOWN`              |
+| [KvcAutocomplete](<REPO_BASE>/docs/KvcAutocomplete.md)     | オートコンプリート         | -                        |
+| [KvcDatePicker](<REPO_BASE>/docs/KvcDatePicker.md)         | 日付選択コンポーネント     | `DATE`                   |
+| [KvcTimePicker](<REPO_BASE>/docs/KvcTimePicker.md)         | 時間選択コンポーネント     | `TIME`                   |
+| [KvcDateTimePicker](<REPO_BASE>/docs/KvcDateTimePicker.md) | 日付＋時間複合選択         | `DATE_TIME`              |
+| [KvcTable](<REPO_BASE>/docs/KvcTable.md)                   | 行追加・削除可能なテーブル | `SUBTABLE`               |
+| [KvcFileSelect](<REPO_BASE>/docs/KvcFileSelect.md)         | ファイル選択・アップロード | `FILE`                   |
+| [KvcSpinner](<REPO_BASE>/docs/KvcSpinner.md)               | スピナーコンポーネント     | -                        |
+| [Spinner](<REPO_BASE>/docs/MtdSpinner.md)                  | ローディングスピナー       | -                        |

@@ -1,13 +1,18 @@
 <script lang="ts" setup>
 import { onMounted, watch } from 'vue'
-interface KvcDialog {
-  modelValue: boolean;
-  width?: string | number;
-}
+import { Icon } from '@iconify/vue'
+import { KvcDialogProps } from '@/types/component-types'
 
-const emits = defineEmits(['update:modelValue'])
-const props = withDefaults(defineProps<KvcDialog>(), {
-  modelValue: false
+const emits = defineEmits(['update:modelValue', 'cancel', 'confirm', 'close'])
+const props = withDefaults(defineProps<KvcDialogProps>(), {
+  modelValue: false,
+  title: 'Title',
+  showIcon: false,
+  iconType: 'info',
+  cancelText: 'Cancel',
+  confirmText: 'OK',
+  showCancel: true,
+  showConfirm: true,
 })
 
 const toggleBodyOverflow = (visible: boolean) => {
@@ -19,8 +24,46 @@ const toggleBodyOverflow = (visible: boolean) => {
   }
 }
 
+const getIconName = () => {
+  switch (props.iconType) {
+    case 'info': return 'ep:info-filled'
+    case 'warning': return 'ep:warning-filled'
+    case 'error': return 'ep:circle-close-filled'
+    case 'success': return 'ep:circle-check-filled'
+    case 'question': return 'ep:question-filled'
+    default: return 'ep:info-filled'
+  }
+}
+
+const getIconColor = () => {
+  switch (props.iconType) {
+    case 'info': return '#3498db'
+    case 'warning': return '#f39c12'
+    case 'error': return '#e74c3c'
+    case 'success': return '#27ae60'
+    default: return '#3498db'
+  }
+}
+
+const handleCancel = () => {
+  emits('cancel')
+  emits('update:modelValue', false)
+}
+
+const handleConfirm = () => {
+  emits('confirm')
+  emits('update:modelValue', false)
+}
+
+const handleClose = () => {
+  emits('update:modelValue', false)
+}
+
 onMounted(() => toggleBodyOverflow(props.modelValue))
-watch(() => props.modelValue, toggleBodyOverflow)
+watch(() => props.modelValue, (aft) => {
+  toggleBodyOverflow(aft)
+  if (!aft) emits('close')
+})
 </script>
 
 <template>
@@ -29,124 +72,47 @@ watch(() => props.modelValue, toggleBodyOverflow)
       class="kvc-dialog"
       :style="width ? { width } : null"
     >
+      <!-- ヘッダー -->
       <div class="kvc-dialog-header">
-        <slot name="header"></slot>
-
+        <h2 class="kvc-dialog-title">{{ title }}</h2>
         <button
           type="button"
           class="kvc-dialog-close"
-          @click="emits('update:modelValue', false)"
+          @click="handleClose"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"
-            />
-          </svg>
+          <Icon icon="mdi-light:plus" width="24" />
         </button>
       </div>
-      <div class="kvc-dialog-content-wrapper">
-        <slot name="body-header"></slot>
-        <div class="kvc-dialog-content">
-          <slot></slot>
+
+      <!-- コンテンツ -->
+      <div class="kvc-dialog-content">
+        <div v-if="showIcon" class="kvc-dialog-icon">
+          <Icon
+            :icon="getIconName()"
+            width="24"
+            :style="{ color: getIconColor() }"
+          />
         </div>
-        <slot name="body-footer"></slot>
+        <div class="kvc-dialog-message">
+          <slot>This is Content</slot>
+        </div>
       </div>
+
+      <!-- フッター（ボタン） -->
       <div class="kvc-dialog-footer">
-        <slot name="footer"></slot>
+        <KvcButton
+          v-if="showCancel"
+          color="normal"
+          @click="handleCancel"
+        >
+          {{ cancelText }}
+        </KvcButton>
+        <KvcButton
+          v-if="showConfirm"
+          color="save"
+          @click="handleConfirm"
+        >{{ confirmText }}</KvcButton>
       </div>
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.kvc-dialog-wrapper {
-  position: fixed;
-  top: 0;
-  right: 0;
-  display: block;
-  width: 100vw;
-  height: 100vh;
-  background-color: #00000099;
-  z-index: 1000;
-  overscroll-behavior: contain;
-
-  .kvc-dialog {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    max-height: 100vh;
-    width: 500px;
-    max-width: 100%;
-    background-color: #fff;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    & > :not(:last-child) {
-      border-top-width: 0px;
-      border-bottom-width: 1px;
-      border-right: 0;
-      border-left: 0;
-      border-color: #e3e7e8;
-      border-style: solid;
-    }
-
-    .kvc-dialog-header {
-      position: relative;
-      padding: 0 72px 0 24px;
-      height: 64px;
-      background-color: #fff;
-      font-size: 24px;
-      line-height: 64px;
-
-      button.kvc-dialog-close {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        padding: 0;
-        border: 0;
-        top: 50%;
-        right: 12px;
-        transform: translateY(-50%);
-        width: 36px;
-        height: 36px;
-        border-radius: 9999px;
-        background-color: #f8f9fa;
-        color: #8e8e8e;
-
-        svg {
-          display: block;
-        }
-      }
-    }
-
-    .kvc-dialog-footer {
-      display: flex;
-      width: 100%;
-      padding: 24px;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #fff;
-    }
-
-    .kvc-dialog-content-wrapper {
-      position: relative;
-      max-height: calc(100vh - 64px - 97px);
-      overflow-y: auto;
-      background-color: #f7f9fa;
-
-      .kvc-dialog-content {
-        padding: 24px;
-        display: block;
-      }
-    }
-  }
-}
-</style>

@@ -1,0 +1,98 @@
+@mixin dialog-styles {
+  .kvc-dialog-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .kvc-dialog {
+      background-color: white;
+      width: max-content;
+      min-width: fit-content;
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow: hidden;
+      font-size: 20px;
+      position: fixed;
+      line-height: normal;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10000;
+
+      .kvc-dialog-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+        background-color: white;
+        border-bottom: 1px solid var(--kvc-color-base);
+
+        .kvc-dialog-title {
+          font-size: 24px;
+          font-weight: 400;
+          padding: 0 24px;
+          color: #333;
+          margin: 0;
+        }
+
+        .kvc-dialog-close {
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: #999;
+          width: 32px;
+          height: 32px;
+          background-color: var(--kvc-color-main);
+          border-radius: 9999px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            color: #666;
+          }
+
+          svg {
+            rotate: 45deg;
+            margin: -20px;
+          }
+        }
+      }
+
+      .kvc-dialog-content {
+        padding: 24px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        min-height: 60px;
+
+        .kvc-dialog-icon {
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+
+        .kvc-dialog-message {
+          flex: 1;
+          line-height: 1.5;
+          color: #333;
+        }
+      }
+
+      .kvc-dialog-footer {
+        padding: 16px 20px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        background-color: white;
+        border-top: 1px solid var(--kvc-color-base);
+      }
+    }
+  }
+}
