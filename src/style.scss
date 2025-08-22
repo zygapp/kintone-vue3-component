@@ -5,6 +5,7 @@
 @use './assets/autocomplete' as *;
 @use './assets/file-select' as *;
 @use './assets/form-field' as *;
+@use './assets/group' as *;
 @use './assets/text-input' as *;
 @use './assets/select-list' as *;
 @use './assets/table' as *;
@@ -45,8 +46,10 @@
   @include checkbox-group-styles;
   @include datetime-picker-styles;
   @include dropdown-styles;
+  @include autocomplete-styles;
   @include file-select-styles;
   @include form-field-styles;
+  @include group-styles;
   @include select-list-styles;
   @include text-input-styles;
   @include table-styles;

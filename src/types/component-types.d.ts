@@ -97,6 +97,15 @@ export interface KvcFieldProps {
 }
 
 
+// KvcGroup
+export interface KvcGroupProps {
+  label?: string;
+  open?: boolean;
+  collapsible?: boolean;
+  width?: string | number;
+}
+
+
 // KvcFileSelect
 export interface KvcFileData {
   fileKey?: string;

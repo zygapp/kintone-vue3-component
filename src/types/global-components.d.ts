@@ -7,6 +7,7 @@ import {
   KvcDropdownProps,
   KvcAutocompleteProps,
   KvcFieldProps,
+  KvcGroupProps,
   KvcFileSelectProps,
   KvcRadioProps,
   KvcTableProps,
@@ -26,6 +27,7 @@ export interface KintoneVueGlobalComponents {
   KvcDropdown: DefineComponent<KvcDropdownProps>
   KvcAutocomplete: DefineComponent<KvcAutocompleteProps>
   KvcField: DefineComponent<KvcFieldProps>
+  KvcGroup: DefineComponent<KvcGroupProps>
   KvcFileSelect: DefineComponent<KvcFileSelectProps>
   KvcRadio: DefineComponent<KvcRadioProps>
   KvcRow: DefineComponent

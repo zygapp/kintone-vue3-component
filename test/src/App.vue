@@ -278,5 +278,20 @@ const tab = ref('aaa')
         </KvcTab>
       </KvcField>
     </KvcRow>
+
+    <KvcRow>
+      <KvcField>
+        <template #label>Group</template>
+
+        <KvcGroup label="グループ">
+          <KvcRow>
+            <KvcField>
+              <template #label>text</template>
+              <KvcTextInput width="200px" v-model="input" />
+            </KvcField>
+          </KvcRow>
+        </KvcGroup>
+      </KvcField>
+    </KvcRow>
   </KvcWrap>
 </template>

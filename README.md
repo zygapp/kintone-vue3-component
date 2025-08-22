@@ -78,6 +78,7 @@ app.use(KintoneVueComponent);
 | [KvcSpinner](<REPO_BASE>/KvcSpinner.md)               | スピナーコンポーネント     | -                        |
 | [KvcDialog](<REPO_BASE>/KvcDialog.md)                 | ダイアログコンポーネント   | -                        |
 | [KvcField](<REPO_BASE>/KvcField.md)                   | 入力フィールドラッパー     | -                        |
+| [KvcGroup](<REPO_BASE>/KvcGroup.md)                   | グループコンテナー         | `GROUP`                  |
 | [KvcButton](<REPO_BASE>/KvcButton.md)                 | スタイル付きボタン         | -                        |
 | [KvcCheckbox](<REPO_BASE>/KvcCheckbox.md)             | 複数選択チェックボックス   | `CHECK_BOX`              |
 | [KvcRadio](<REPO_BASE>/KvcRadio.md)                   | 単一選択ラジオボタン       | `RADIO_BUTTON`           |
