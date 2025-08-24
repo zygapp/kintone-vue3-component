@@ -142,4 +142,4 @@ const handleCancel = () => {
 
 ---
 
-[◀ 戻る](<REPO_BASE>/README.md)
+[◀ 戻る](https://git.zygapp.org/kintone-utils/kintone-vue3-component/src/branch/main/README.md)

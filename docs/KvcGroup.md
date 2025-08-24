@@ -183,3 +183,7 @@ const form = ref({
 ## kintone フィールドとの対応
 
 このコンポーネントは、kintone の「グループ」フィールドタイプに対応します。kintone アプリのフォーム設定で使用されるグループ機能と同等の見た目と動作を提供します。
+
+---
+
+[◀ 戻る](https://git.zygapp.org/kintone-utils/kintone-vue3-component/src/branch/main/README.md)
