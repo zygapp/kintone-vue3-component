@@ -157,6 +157,17 @@ const handleDialogConfirm = () => {
 
     <KvcRow>
       <KvcField>
+        <template #label>multiselect</template>
+        <KvcMultiSelect v-model="checkbox" :items="items" :rows="3" />
+      </KvcField>
+      <KvcField>
+        <template #label>multiselect</template>
+        <KvcMultiSelect read-only v-model="checkbox" :items="items" />
+      </KvcField>
+    </KvcRow>
+
+    <KvcRow>
+      <KvcField>
         <template #label>Dropdown</template>
         <KvcDropdown v-model="dropdown" :items="items" />
       </KvcField>

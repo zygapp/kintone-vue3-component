@@ -8,6 +8,7 @@
 @use './assets/group' as *;
 @use './assets/text-input' as *;
 @use './assets/select-list' as *;
+@use './assets/multi-select' as *;
 @use './assets/table' as *;
 @use './assets/tab' as *;
 @use './assets/dialog' as *;
@@ -52,6 +53,7 @@
   @include form-field-styles;
   @include group-styles;
   @include select-list-styles;
+  @include multi-select-styles;
   @include text-input-styles;
   @include table-styles;
   @include tab-styles;

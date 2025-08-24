@@ -40,6 +40,17 @@ export interface KvcCheckboxProps {
   modelValue: (string | number)[];
 }
 
+// KvcMultiSelect
+export interface KvcMultiSelectProps {
+  modelValue: (string | number)[];
+  items: KvcItemBase[];
+  itemLabel?: string;
+  itemValue?: string;
+  nonstyled?: boolean;
+  disabled?: boolean;
+  readOnly?: boolean;
+  rows?: number;
+}
 
 // KvcDatePicker
 export interface KvcDatePickerProps {

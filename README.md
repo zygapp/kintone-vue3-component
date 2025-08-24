@@ -85,6 +85,7 @@ app.use(KintoneVueComponent);
 | [KvcTextarea](<REPO_BASE>/docs/KvcTextarea.md)             | テキストエリア             | `MULTI_LINE_TEXT`        |
 | [KvcDropdown](<REPO_BASE>/docs/KvcDropdown.md)             | ドロップダウンセレクト     | `DROP_DOWN`              |
 | [KvcAutocomplete](<REPO_BASE>/docs/KvcAutocomplete.md)     | オートコンプリート         | -                        |
+| [KvcMultiSelect](<REPO_BASE>/docs/KvcMultiSelect.md)       | 複数選択リスト             | `MULTI_SELECT`           |
 | [KvcDatePicker](<REPO_BASE>/docs/KvcDatePicker.md)         | 日付選択コンポーネント     | `DATE`                   |
 | [KvcTimePicker](<REPO_BASE>/docs/KvcTimePicker.md)         | 時間選択コンポーネント     | `TIME`                   |
 | [KvcDateTimePicker](<REPO_BASE>/docs/KvcDateTimePicker.md) | 日付＋時間複合選択         | `DATE_TIME`              |
