@@ -1,7 +1,7 @@
 .claude
 node_modules
 src
-test
+test/*
 
 GEMINI.md
 CLAUDE.md
