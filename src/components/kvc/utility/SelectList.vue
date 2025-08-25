@@ -40,7 +40,6 @@ const scrollToValue = (value: string | number | null) => {
 onMounted(() => scrollToValue(props.modelValue))
 
 const onSelectItem = (value: string | number) => {
-  console.log('onSelectItem', value)
   emits('update:modelValue', value)
   emits('change', value)
 }
