@@ -3355,7 +3355,7 @@ const Ah = ["onClick", "onMouseover"], Ch = { class: "kvc-select-list-item-icon-
     };
     _r(() => l(n.modelValue));
     const f = (h) => {
-      console.log("onSelectItem", h), r("update:modelValue", h), r("change", h);
+      r("update:modelValue", h), r("change", h);
     }, p = (h) => typeof h == "object" && h !== null ? h[n.valueKey ?? "value"] ?? h : h, v = (h) => typeof h == "object" && h !== null ? h[n.labelKey ?? "label"] ?? h : h;
     return (h, m) => (V(), H("ul", {
       ref_key: "listWrapRef",
@@ -3415,7 +3415,7 @@ const Ah = ["onClick", "onMouseover"], Ch = { class: "kvc-select-list-item-icon-
         [n.itemLabel]: m,
         [n.itemValue]: m
       });
-      return console.log(h), [
+      return [
         {
           [n.itemLabel]: "---",
           [n.itemValue]: ""

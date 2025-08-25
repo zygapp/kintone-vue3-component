@@ -70,7 +70,6 @@ const parsedItems = computed(() => {
     }
   })
 
-  console.log($items)
   return [
     {
       [props.itemLabel]: '---',
