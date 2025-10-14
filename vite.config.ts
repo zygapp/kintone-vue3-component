@@ -8,20 +8,9 @@ export default defineConfig({
     vue(),
     dts({
       outputDir: 'dist',
-      insertTypesEntry: false,
+      insertTypesEntry: true,
       include: ['src'],
-      rollupTypes: false,
-      beforeWriteFile: (filePath, content) => {
-        // .d.ts ファイルを .ts ファイルに変更
-        if (filePath.endsWith('.vue.d.ts')) {
-          const newPath = filePath.replace(/\.vue\.d\.ts$/, '.ts');
-          return {
-            filePath: newPath,
-            content: content
-          };
-        }
-        return { filePath, content };
-      }
+      rollupTypes: true,
     }),
   ],
   resolve: {

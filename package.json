@@ -13,12 +13,13 @@
   "type": "module",
   "main": "./dist/kintone-vue3-component.umd.js",
   "module": "./dist/kintone-vue3-component.es.js",
-  "types": "./dist/index.ts",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/kintone-vue3-component.es.js",
       "require": "./dist/kintone-vue3-component.umd.js"
     },
