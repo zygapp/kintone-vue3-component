@@ -237,6 +237,7 @@ const columns: KvcTableColumn[] = [
 ### コミットメッセージ規則
 
 - **Conventional Commits 形式**を使用（`type: description`）
+- 日本語を使用
 - 必要最低限の簡潔なメッセージ
 - 絵文字は使用しない
 - クレジット（Co-Authored-By: Claude など）は記載しない

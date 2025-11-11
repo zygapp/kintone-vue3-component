@@ -1,14 +1,30 @@
+<div align="center">
+
 # kintone Vue3 Component
 
-Vue 3 + TypeScript 対応の UI コンポーネントライブラリです。kintone カスタマイズや業務アプリ開発に最適化されています。
+**Vue 3 + TypeScript で構築する kintone カスタマイズ UI ライブラリ**
 
-## 特徴
+[![npm version](https://img.shields.io/npm/v/@zygapp/kintone-vue3-component.svg)](https://www.npmjs.com/package/@zygapp/kintone-vue3-component)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+[ドキュメント](https://docs-kvc.zygapp.org) | [GitHub](https://github.com/zygapp/kintone-vue3-component)
+
+</div>
+
+---
+
+## 概要
+
+kintone Vue3 Component は、kintone カスタマイズおよび業務アプリ開発に特化した Vue 3 コンポーネントライブラリです。kintone の標準 UI に準拠したデザインで、タイプセーフな開発体験を提供します。
+
+## 主な特徴
 
 - **Vue 3 Composition API** - 最新の Vue 3 に完全対応
-- **TypeScript 完全サポート** - 型安全な開発体験
-- **kintone UI 互換** - kintone の標準 UI に準拠したデザイン
-- **豊富なコンポーネント** - フォーム、レイアウト、UI コンポーネントを多数提供
-- **カスタマイズ可能** - CSS 変数によるテーマ調整が可能
+- **TypeScript 完全サポート** - すべてのコンポーネントに型定義を提供
+- **kintone UI 互換** - kintone のデザインシステムに準拠
+- **豊富なコンポーネント** - 20種類以上のコンポーネントを提供
+- **簡単なカスタマイズ** - CSS 変数でテーマを柔軟に調整可能
+- **双方向データバインディング** - すべてのフォームコンポーネントで `v-model` に対応
 
 ## インストール
 
@@ -39,8 +55,6 @@ import '@zygapp/kintone-vue3-component/style.css'
 ```
 
 ## 基本的な使い方
-
-すべてのコンポーネントは `<KvcWrap>` でラップして使用します。
 
 ```vue
 <template>
@@ -85,36 +99,36 @@ const handleSubmit = (event: Event) => {
 
 | コンポーネント | 説明 |
 |--------------|------|
-| **KvcWrap** | form/div 切り替えラッパー（必須） |
-| **KvcRow** | 行レイアウト |
-| **KvcField** | フィールドラッパー（ラベル、エラー表示） |
-| **KvcGroup** | グループコンテナー |
+| `KvcWrap` | form/div 切り替えラッパー（必須） |
+| `KvcRow` | 行レイアウト |
+| `KvcField` | フィールドラッパー（ラベル、エラー表示） |
+| `KvcGroup` | グループコンテナー（開閉可能） |
 
 ### フォーム入力系
 
-| コンポーネント | 説明 | kintone フィールドタイプ |
-|--------------|------|----------------------|
-| **KvcTextInput** | テキスト入力 | `SINGLE_LINE_TEXT` |
-| **KvcTextarea** | テキストエリア | `MULTI_LINE_TEXT` |
-| **KvcCheckbox** | チェックボックス | `CHECK_BOX` |
-| **KvcRadio** | ラジオボタン | `RADIO_BUTTON` |
-| **KvcDropdown** | ドロップダウン | `DROP_DOWN` |
-| **KvcAutocomplete** | オートコンプリート | - |
-| **KvcMultiSelect** | 複数選択リスト | `MULTI_SELECT` |
-| **KvcDatePicker** | 日付選択 | `DATE` |
-| **KvcTimePicker** | 時刻選択 | `TIME` |
-| **KvcDateTimePicker** | 日時選択 | `DATETIME` |
-| **KvcFileSelect** | ファイル選択 | `FILE` |
-| **KvcTable** | テーブル | `SUBTABLE` |
+| コンポーネント | 説明 | kintone フィールド |
+|--------------|------|------------------|
+| `KvcTextInput` | テキスト入力 | `SINGLE_LINE_TEXT` |
+| `KvcTextarea` | テキストエリア | `MULTI_LINE_TEXT` |
+| `KvcCheckbox` | チェックボックス | `CHECK_BOX` |
+| `KvcRadio` | ラジオボタン | `RADIO_BUTTON` |
+| `KvcDropdown` | ドロップダウン | `DROP_DOWN` |
+| `KvcAutocomplete` | オートコンプリート | - |
+| `KvcMultiSelect` | 複数選択リスト | `MULTI_SELECT` |
+| `KvcDatePicker` | 日付選択 | `DATE` |
+| `KvcTimePicker` | 時刻選択 | `TIME` |
+| `KvcDateTimePicker` | 日時選択 | `DATETIME` |
+| `KvcFileSelect` | ファイル選択（D&D 対応） | `FILE` |
+| `KvcTable` | テーブル（D&D 並び替え対応） | `SUBTABLE` |
 
 ### UI 系
 
 | コンポーネント | 説明 |
 |--------------|------|
-| **KvcButton** | ボタン（カラーバリエーション対応） |
-| **KvcTab/KvcTabPane** | タブコンポーネント |
-| **KvcDialog** | モーダルダイアログ |
-| **KvcSpinner** | ローディングスピナー |
+| `KvcButton` | ボタン（4種類のカラーバリエーション） |
+| `KvcTab` / `KvcTabPane` | タブコンポーネント |
+| `KvcDialog` | モーダルダイアログ |
+| `KvcSpinner` | ローディングスピナー |
 
 ## コンポーザブル
 
@@ -146,18 +160,6 @@ showSpinner('読み込み中...')
 setTimeout(() => hideSpinner(), 3000)
 ```
 
-## ドキュメント
-
-詳細なドキュメントは以下で確認できます：
-
-```bash
-cd docs-vuepress
-npm install
-npm run docs:dev
-```
-
-ブラウザで `http://localhost:8080` にアクセスしてください。
-
 ## TypeScript サポート
 
 すべてのコンポーネントに型定義が含まれています。
@@ -175,10 +177,27 @@ const columns: KvcTableColumn[] = [
 ]
 ```
 
+## ドキュメント
+
+詳細なドキュメントは公式サイトをご覧ください：
+
+**[https://docs-kvc.zygapp.org](https://docs-kvc.zygapp.org)**
+
 ## ライセンス
 
-MIT
+MIT License - 詳細は [LICENSE](LICENSE) をご覧ください。
 
-## リポジトリ
+## リンク
 
-https://git.zygapp.org/kintone-utils/kintone-vue3-component
+- [ドキュメント](https://docs-kvc.zygapp.org)
+- [GitHub リポジトリ](https://github.com/zygapp/kintone-vue3-component)
+- [npm パッケージ](https://www.npmjs.com/package/@zygapp/kintone-vue3-component)
+- [問題報告・機能要望](https://github.com/zygapp/kintone-vue3-component/issues)
+
+---
+
+<div align="center">
+
+Made with ❤️ for kintone developers
+
+</div>
