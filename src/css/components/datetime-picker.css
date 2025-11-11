@@ -35,6 +35,31 @@
   text-align: center;
   font-size: 13px;
 
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+  }
+
+  th, td {
+    text-align: inherit;
+    vertical-align: middle;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    line-height: normal;
+  }
+
   .kvc-datepicker-controls {
     display: flex;
     align-items: center;

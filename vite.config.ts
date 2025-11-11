@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
-      outputDir: 'dist',
+      outDir: 'dist',
       insertTypesEntry: true,
       include: ['src'],
       rollupTypes: true,

@@ -27,7 +27,7 @@
     "./style.css": "./dist/kintone-vue3-component.css"
   },
   "scripts": {
-    "dev": "vite ./test",
+    "dev": "vite",
     "build": "vite build && node scripts/post-build.js",
     "preview": "vite preview",
     "doc": "cd docs-vuepress && npm install && npm run docs:dev"
