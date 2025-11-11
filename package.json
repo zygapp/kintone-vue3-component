@@ -5,7 +5,7 @@
   "author": "Koji Kato <kato@zyg.jp> (https://x.com/kato_zyg)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zygapp/kintone-vue3-component"
+    "url": "git+https://github.com/zygapp/kintone-vue3-component.git"
   },
   "bugs": {
     "url": "https://github.com/zygapp/kintone-vue3-component/issues"
