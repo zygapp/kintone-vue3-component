@@ -1,4 +1,4 @@
-import { reactive, readonly } from 'vue'
+import { reactive, readonly, type DeepReadonly } from 'vue'
 
 interface SpinnerOptions {
   text?: string
@@ -10,19 +10,21 @@ interface SpinnerState {
 }
 
 // グローバルなスピナー状態
-const spinnerState = reactive<SpinnerState>({
+export const spinnerState = reactive<SpinnerState>({
   isVisible: false,
   text: '読み込み中...'
 })
 
 export class Spinner {
   private options: SpinnerOptions
+  public readonly state: DeepReadonly<SpinnerState>
 
   constructor(options: SpinnerOptions = {}) {
     this.options = {
       text: '読み込み中...',
       ...options
     }
+    this.state = readonly(spinnerState)
   }
 
   open(text?: string): void {
@@ -43,21 +45,17 @@ export class Spinner {
   }
 }
 
-export const useSpinner = () => {
-  return {
-    spinnerState: readonly(spinnerState),
-    createSpinner: (options?: SpinnerOptions) => new Spinner(options)
-  }
-}
-
 // デフォルトスピナーインスタンス
-export const defaultSpinner = new Spinner()
+const defaultSpinner = new Spinner()
+
+export const useSpinner = () => {
+  return defaultSpinner
+}
 
 // 便利関数
 export const showSpinner = (text?: string) => {
-  const spinner = new Spinner({ text })
-  spinner.open()
-  return spinner
+  defaultSpinner.open(text)
+  return defaultSpinner
 }
 
 export const hideSpinner = () => {

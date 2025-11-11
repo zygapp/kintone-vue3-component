@@ -1,11 +1,14 @@
 .claude
+.kiro
+scripts
+
 node_modules
 src
 test/*
 
 GEMINI.md
 CLAUDE.md
+AGENTS.md
 index.html
 vite.config.js
 yarn.lock
-images/*

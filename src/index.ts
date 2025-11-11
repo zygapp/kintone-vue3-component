@@ -1,4 +1,4 @@
-import './style.scss';
+import './css/style.css';
 import * as components from './components';
 import type { App, Plugin, Component } from 'vue'
 
@@ -15,3 +15,4 @@ export default KintoneVueComponent
 export * from './components'
 export * from './composables/useSpinner'
 export * from './types/component-types'
+export type {} from './types/global-components'

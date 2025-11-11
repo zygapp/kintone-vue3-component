@@ -1,15 +1,16 @@
 {
   "name": "@zygapp/kintone-vue3-component",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "Vue 3 用 kintone UI コンポーネントは、kintone カスタマイズを簡略化するためのツールです。事前定義されたコンポーネントやカスタマイズ性、アクセシビリティ対応により、効率的で使いやすい UI を構築できます。",
   "author": "Koji Kato <kato@zyg.jp> (https://x.com/kato_zyg)",
   "repository": {
     "type": "git",
-    "url": "https://git.zygapp.org/kintone-utils/kintone-vue3-component"
+    "url": "https://github.com/zygapp/kintone-vue3-component"
   },
   "bugs": {
-    "url": "https://git.zygapp.org/kintone-utils/kintone-vue3-component/issues"
+    "url": "https://github.com/zygapp/kintone-vue3-component/issues"
   },
+  "homepage": "https://docs-kvc.zygapp.org",
   "type": "module",
   "main": "./dist/kintone-vue3-component.umd.js",
   "module": "./dist/kintone-vue3-component.es.js",
@@ -27,8 +28,9 @@
   },
   "scripts": {
     "dev": "vite ./test",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "vite build && node scripts/post-build.js",
+    "preview": "vite preview",
+    "doc": "cd docs-vuepress && npm install && npm run docs:dev"
   },
   "keywords": [
     "vue",
@@ -43,8 +45,6 @@
     "@vueuse/core": "^12.5.0",
     "@vueuse/integrations": "^12.5.0",
     "dayjs": "^1.11.13",
-    "postcss-replace": "^2.0.1",
-    "sass-embedded": "^1.83.4",
     "sortablejs": "^1",
     "vue-draggable-next": "^2.2.1"
   },

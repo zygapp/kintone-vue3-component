@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { KvcWrapProps } from '@/types/component-types'
-import { useSpinner } from '../../composables/useSpinner'
 import KvcSpinner from './spinner.vue'
 
 defineProps<KvcWrapProps>()
@@ -8,8 +7,6 @@ defineProps<KvcWrapProps>()
 const emits = defineEmits<{
   (e: 'submit', event: Event): void
 }>()
-
-const { spinnerState } = useSpinner()
 </script>
 
 <template>
@@ -22,9 +19,6 @@ const { spinnerState } = useSpinner()
     <slot></slot>
 
     <!-- スピナーをKvcWrap内に埋め込み -->
-    <KvcSpinner
-      :modelValue="spinnerState.isVisible"
-      :text="spinnerState.text"
-    />
+    <KvcSpinner />
   </component>
 </template>

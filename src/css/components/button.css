@@ -1,0 +1,75 @@
+#kvc-wrap {
+  .kvc-button {
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid var(--kvc-color-base);
+    background-color: var(--kvc-color-secondary-dark);
+    box-shadow: 1px 1px 1px #fff inset;
+    color: var(--kvc-color-main);
+    display: inline-block;
+    padding: 0 16px;
+    min-width: 163px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--kvc-color-secondary-dark);
+    }
+
+    &.kvc-button-sm {
+      min-width: 80px;
+      max-width: 280px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    &.kvc-button-normal {
+      background-color: var(--kvc-color-main);
+      color: var(--kvc-color-primary);
+
+      &:hover {
+        background-color: var(--kvc-color-main-dark);
+      }
+    }
+
+    &.kvc-button-success {
+      background-color: var(--kvc-color-success);
+      color: var(--kvc-color-main);
+
+      &:hover {
+        background-color: var(--kvc-color-success-dark);
+      }
+    }
+
+
+    &.kvc-button-save {
+      background-color: var(--kvc-color-primary);
+      color: var(--kvc-color-main);
+
+      &:hover {
+        background-color: var(--kvc-color-primary-dark);
+      }
+    }
+
+
+    &.kvc-button-error {
+      background-color: var(--kvc-color-error);
+      color: var(--kvc-color-main);
+
+      &:hover {
+        background-color: var(--kvc-color-error-dark);
+      }
+    }
+
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: var(--kvc-color-disabled-background) !important;
+      color: var(--kvc-color-disabled-text) !important;
+    }
+  }
+}

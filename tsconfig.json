@@ -21,7 +21,8 @@
   },
   "include": ["src", "src/types"],
   "files": [
-    "src/types/component-types.d.ts",
+    "src/types/component-types.ts",
+    "src/types/global-components.d.ts",
     "src/types/vue-shim.d.ts"
   ]
 }

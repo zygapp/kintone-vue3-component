@@ -11,6 +11,8 @@ export default defineConfig({
       insertTypesEntry: true,
       include: ['src'],
       rollupTypes: true,
+      staticImport: true,
+      copyDtsFiles: true,
     }),
   ],
   resolve: {
@@ -34,6 +36,7 @@ export default defineConfig({
     rollupOptions: {
       external: ['vue'],
       output: {
+        exports: 'named',
         globals: {
           vue: 'Vue'
         }

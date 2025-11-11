@@ -1,0 +1,87 @@
+@import './variables.css';
+@import './components/button.css';
+@import './components/checkbox-group.css';
+@import './components/date-picker.css';
+@import './components/datetime-picker.css';
+@import './components/dropdown.css';
+@import './components/autocomplete.css';
+@import './components/file-select.css';
+@import './components/form-field.css';
+@import './components/group.css';
+@import './components/text-input.css';
+@import './components/select-list.css';
+@import './components/multi-select.css';
+@import './components/table.css';
+@import './components/tab.css';
+@import './components/dialog.css';
+
+#kvc-wrap {
+
+  .kvc-row {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    width: 100%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  * > p {
+    margin: 0;
+  }
+
+  .kvc-datepicker-popup button {
+    all: unset;
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .kvc-dropdown,
+  .kvc-field-text {
+    height: 40px;
+    line-height: 1.5;
+
+    &:focus {
+      border-color: var(--kvc-color-primary);
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: var(--kvc-color-disabled-background);
+      box-shadow: none;
+      color: var(--kvc-color-disabled-text);
+      cursor: not-allowed;
+      opacity: 1;
+    }
+  }
+
+  .kvc-button,
+  .kvc-datepicker-popup button,
+  .kvc-dropdown,
+  .kvc-field-text {
+    font-size: 14px;
+    line-height: 1.5;
+    outline: 0;
+
+    &:disabled {
+      cursor: not-allowed;
+      color: var(--kvc-color-disabled-text);
+    }
+  }
+
+  .kvc-link {
+    color: var(--kvc-color-primary);
+    &:hover {
+      color: var(--kvc-color-primary-dark);
+    }
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

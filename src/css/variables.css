@@ -1,0 +1,21 @@
+:root {
+  --kvc-spacing: 0.25rem;
+  --kvc-color-disabled-background: #d4d7d7;
+  --kvc-color-disabled-text: #888;
+  --kvc-color-border: #ccc;
+  --kvc-color-base: #e3e7e8;
+  --kvc-color-base-light: #f5f5f5;
+  --kvc-color-base-dark: #eee;
+  --kvc-color-main: #f7f9fa;
+  --kvc-color-main-dark: #c8d6dd;
+  --kvc-color-primary: #3498db;
+  --kvc-color-primary-light: #e2f2fe;
+  --kvc-color-primary-dark: #1d6fa5;
+  --kvc-color-secondary: #9f9f9f;
+  --kvc-color-secondary-dark: #6b6b6b;
+  --kvc-color-secondary-light: #c5c5c5;
+  --kvc-color-success: #91c36c;
+  --kvc-color-success-dark: #78a656;
+  --kvc-color-error: #e74c3c;
+  --kvc-color-error-dark: #bf2718;
+}

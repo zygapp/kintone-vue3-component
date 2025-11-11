@@ -1,16 +1,6 @@
 <script lang="ts" setup>
 import { watch, computed, onMounted } from 'vue'
-
-interface KvcSpinner {
-  modelValue: boolean;
-  text: string;
-}
-
-const emits = defineEmits(['update:modelValue'])
-const props = withDefaults(defineProps<KvcSpinner>(), {
-  modelValue: false,
-  text: '読み込み中...',
-})
+import { spinnerState } from '../../composables/useSpinner'
 
 const toggleBodyOverflow = (visible: boolean) => {
   const body = document.querySelector('body')
@@ -21,13 +11,13 @@ const toggleBodyOverflow = (visible: boolean) => {
   }
 }
 
-onMounted(() => toggleBodyOverflow(props.modelValue))
-watch(() => props.modelValue, toggleBodyOverflow)
-const htmlText = computed(() => (props.text || '').replace('\n', '<br>'))
+onMounted(() => toggleBodyOverflow(spinnerState.isVisible))
+watch(() => spinnerState.isVisible, toggleBodyOverflow)
+const htmlText = computed(() => (spinnerState.text || '').replace('\n', '<br>'))
 </script>
 
 <template>
-  <div v-show="modelValue" class="kvc-spinner-wrapper">
+  <div v-show="spinnerState.isVisible" class="kvc-spinner-wrapper">
     <div class="kvc-spinner">
       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
         <g>
@@ -48,7 +38,8 @@ const htmlText = computed(() => (props.text || '').replace('\n', '<br>'))
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
+
+<style scoped>
 .kvc-spinner-wrapper {
   position: fixed;
   top: 0;
@@ -74,11 +65,8 @@ const htmlText = computed(() => (props.text || '').replace('\n', '<br>'))
       display: block;
       margin: 0 auto;
       animation: spin 1s linear infinite;
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
-      }
+      transform-origin: 50% 50%;
+      transform-box: fill-box;
     }
 
     .kvc-spinner-text {
@@ -86,6 +74,12 @@ const htmlText = computed(() => (props.text || '').replace('\n', '<br>'))
       font-size: 14px;
       color: #333;
     }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 </style>
