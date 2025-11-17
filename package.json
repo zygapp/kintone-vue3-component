@@ -1,6 +1,6 @@
 {
   "name": "@zygapp/kintone-vue3-component",
-  "version": "0.6.1",
+  "version": "0.6.3",
   "description": "Vue 3 用 kintone UI コンポーネントは、kintone カスタマイズを簡略化するためのツールです。事前定義されたコンポーネントやカスタマイズ性、アクセシビリティ対応により、効率的で使いやすい UI を構築できます。",
   "author": "Koji Kato <kato@zyg.jp> (https://x.com/kato_zyg)",
   "repository": {
@@ -20,9 +20,14 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/kintone-vue3-component.es.js",
-      "require": "./dist/kintone-vue3-component.umd.js"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/kintone-vue3-component.es.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/kintone-vue3-component.umd.js"
+      }
     },
     "./style.css": "./dist/kintone-vue3-component.css"
   },
@@ -30,7 +35,8 @@
     "dev": "vite",
     "build": "vite build && node scripts/post-build.js",
     "preview": "vite preview",
-    "doc": "cd docs-vuepress && npm install && npm run docs:dev"
+    "doc": "cd docs-vuepress && npm install && npm run docs:dev",
+    "publish": "npm run build && npm publish"
   },
   "keywords": [
     "vue",
