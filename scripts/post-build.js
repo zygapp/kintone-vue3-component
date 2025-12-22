@@ -1,54 +1,49 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 
-// グローバル型定義の内容を読み込む
-const globalTypesPath = resolve('src/types/global-components.d.ts');
 const indexDtsPath = resolve('dist/index.d.ts');
 
 // ファイルを読み込む
-const globalTypes = readFileSync(globalTypesPath, 'utf-8');
 let indexDts = readFileSync(indexDtsPath, 'utf-8');
 
-// import文とその関連行を削除（既にdist/index.d.tsに含まれているため）
-let inImportBlock = false;
-const globalTypesWithoutImports = globalTypes
-  .split('\n')
-  .filter(line => {
-    const trimmed = line.trim();
+// vite-plugin-dts が生成した declare module 'vue' を検出して置き換え
+const declareModulePattern = /declare module 'vue' \{[\s\S]*?export interface GlobalComponents \{[\s\S]*?\}\s*\}/;
 
-    // import { で始まる行を検出
-    if (trimmed.startsWith('import ')) {
-      inImportBlock = true;
-      return false;
-    }
+// 正しいグローバル型定義
+const correctGlobalTypes = `declare module 'vue' {
+  export interface GlobalComponents {
+    KvcWrap: typeof import('@zygapp/kintone-vue3-component')['KvcWrap']
+    KvcRow: typeof import('@zygapp/kintone-vue3-component')['KvcRow']
+    KvcSpinner: typeof import('@zygapp/kintone-vue3-component')['KvcSpinner']
+    KvcDialog: typeof import('@zygapp/kintone-vue3-component')['KvcDialog']
+    KvcTable: typeof import('@zygapp/kintone-vue3-component')['KvcTable']
+    KvcDropdown: typeof import('@zygapp/kintone-vue3-component')['KvcDropdown']
+    KvcAutocomplete: typeof import('@zygapp/kintone-vue3-component')['KvcAutocomplete']
+    KvcMultiSelect: typeof import('@zygapp/kintone-vue3-component')['KvcMultiSelect']
+    KvcButton: typeof import('@zygapp/kintone-vue3-component')['KvcButton']
+    KvcField: typeof import('@zygapp/kintone-vue3-component')['KvcField']
+    KvcGroup: typeof import('@zygapp/kintone-vue3-component')['KvcGroup']
+    KvcRadio: typeof import('@zygapp/kintone-vue3-component')['KvcRadio']
+    KvcCheckbox: typeof import('@zygapp/kintone-vue3-component')['KvcCheckbox']
+    KvcTextInput: typeof import('@zygapp/kintone-vue3-component')['KvcTextInput']
+    KvcDatePicker: typeof import('@zygapp/kintone-vue3-component')['KvcDatePicker']
+    KvcTimePicker: typeof import('@zygapp/kintone-vue3-component')['KvcTimePicker']
+    KvcDateTimePicker: typeof import('@zygapp/kintone-vue3-component')['KvcDateTimePicker']
+    KvcTextarea: typeof import('@zygapp/kintone-vue3-component')['KvcTextarea']
+    KvcFileSelect: typeof import('@zygapp/kintone-vue3-component')['KvcFileSelect']
+    KvcTab: typeof import('@zygapp/kintone-vue3-component')['KvcTab']
+    KvcTabPane: typeof import('@zygapp/kintone-vue3-component')['KvcTabPane']
+  }
+}`;
 
-    // } from で終わる行を検出してimportブロックを終了
-    if (inImportBlock && trimmed.includes('} from ')) {
-      inImportBlock = false;
-      return false;
-    }
-
-    // importブロック内の行をスキップ
-    if (inImportBlock) {
-      return false;
-    }
-
-    return true;
-  })
-  .join('\n')
-  .trim();
-
-// 既にグローバル型定義が存在するかチェック
-if (indexDts.includes('Global component type definitions for app.use()')) {
-  console.log('ℹ Global component types already exist in dist/index.d.ts');
+if (declareModulePattern.test(indexDts)) {
+  // 既存の declare module 'vue' を正しい形式に置き換え
+  indexDts = indexDts.replace(declareModulePattern, correctGlobalTypes);
+  writeFileSync(indexDtsPath, indexDts, 'utf-8');
+  console.log('✓ Global component types updated in dist/index.d.ts');
 } else {
-  // export {} を削除（空のexportは不要）
-  indexDts = indexDts.replace(/export\s*\{\s*\}\s*$/m, '').trim();
-
-  // グローバル型定義をindex.d.tsの末尾に追加
-  const exportStatement = '\n\n// Global component type definitions for app.use()\n' + globalTypesWithoutImports;
-
-  indexDts += exportStatement;
+  // declare module 'vue' がなければ追加
+  indexDts += '\n\n' + correctGlobalTypes + '\n';
   writeFileSync(indexDtsPath, indexDts, 'utf-8');
   console.log('✓ Global component types added to dist/index.d.ts');
 }

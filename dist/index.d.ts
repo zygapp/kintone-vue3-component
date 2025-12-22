@@ -856,35 +856,32 @@ export declare const spinnerState: {
 
 export declare const useSpinner: () => Spinner;
 
+export { }
+
+
 
 declare module 'vue' {
-  export interface GlobalComponents extends KintoneVueGlobalComponents {}
-}
-
-// Global component type definitions for app.use()
-export interface KintoneVueGlobalComponents {
-  KvcButton: DefineComponent<KvcButtonProps>
-  KvcCheckbox: DefineComponent<KvcCheckboxProps>
-  KvcDatePicker: DefineComponent<KvcDatePickerProps>
-  KvcDateTimePicker: DefineComponent<KvcDateTimePickerProps>
-  KvcDialog: DefineComponent<KvcDialogProps>
-  KvcDropdown: DefineComponent<KvcDropdownProps>
-  KvcAutocomplete: DefineComponent<KvcAutocompleteProps>
-  KvcMultiSelect: DefineComponent<KvcMultiSelectProps>
-  KvcField: DefineComponent<KvcFieldProps>
-  KvcGroup: DefineComponent<KvcGroupProps>
-  KvcFileSelect: DefineComponent<KvcFileSelectProps>
-  KvcRadio: DefineComponent<KvcRadioProps>
-  KvcRow: DefineComponent
-  KvcTab: DefineComponent<KvcTabProps>
-  KvcTabPane: DefineComponent<KvcTabPaneProps>
-  KvcTable: DefineComponent<KvcTableProps>
-  KvcTextInput: DefineComponent<KvcTextInputProps>
-  KvcTextarea: DefineComponent<KvcTextareaProps>
-  KvcTimePicker: DefineComponent<KvcTimePickerProps>
-  KvcWrap: DefineComponent<KvcWrapProps>
-}
-
-declare module 'vue' {
-  export interface GlobalComponents extends KintoneVueGlobalComponents {}
-}
+  export interface GlobalComponents {
+    KvcWrap: typeof import('@zygapp/kintone-vue3-component')['KvcWrap']
+    KvcRow: typeof import('@zygapp/kintone-vue3-component')['KvcRow']
+    KvcSpinner: typeof import('@zygapp/kintone-vue3-component')['KvcSpinner']
+    KvcDialog: typeof import('@zygapp/kintone-vue3-component')['KvcDialog']
+    KvcTable: typeof import('@zygapp/kintone-vue3-component')['KvcTable']
+    KvcDropdown: typeof import('@zygapp/kintone-vue3-component')['KvcDropdown']
+    KvcAutocomplete: typeof import('@zygapp/kintone-vue3-component')['KvcAutocomplete']
+    KvcMultiSelect: typeof import('@zygapp/kintone-vue3-component')['KvcMultiSelect']
+    KvcButton: typeof import('@zygapp/kintone-vue3-component')['KvcButton']
+    KvcField: typeof import('@zygapp/kintone-vue3-component')['KvcField']
+    KvcGroup: typeof import('@zygapp/kintone-vue3-component')['KvcGroup']
+    KvcRadio: typeof import('@zygapp/kintone-vue3-component')['KvcRadio']
+    KvcCheckbox: typeof import('@zygapp/kintone-vue3-component')['KvcCheckbox']
+    KvcTextInput: typeof import('@zygapp/kintone-vue3-component')['KvcTextInput']
+    KvcDatePicker: typeof import('@zygapp/kintone-vue3-component')['KvcDatePicker']
+    KvcTimePicker: typeof import('@zygapp/kintone-vue3-component')['KvcTimePicker']
+    KvcDateTimePicker: typeof import('@zygapp/kintone-vue3-component')['KvcDateTimePicker']
+    KvcTextarea: typeof import('@zygapp/kintone-vue3-component')['KvcTextarea']
+    KvcFileSelect: typeof import('@zygapp/kintone-vue3-component')['KvcFileSelect']
+    KvcTab: typeof import('@zygapp/kintone-vue3-component')['KvcTab']
+    KvcTabPane: typeof import('@zygapp/kintone-vue3-component')['KvcTabPane']
+  }
+}

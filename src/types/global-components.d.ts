@@ -1,49 +1,49 @@
-import { DefineComponent } from 'vue'
-import {
-  KvcButtonProps,
-  KvcCheckboxProps,
-  KvcDatePickerProps,
-  KvcDateTimePickerProps,
-  KvcDropdownProps,
-  KvcAutocompleteProps,
-  KvcMultiSelectProps,
-  KvcDialogProps,
-  KvcFieldProps,
-  KvcGroupProps,
-  KvcFileSelectProps,
-  KvcRadioProps,
-  KvcTableProps,
-  KvcTextInputProps,
-  KvcTextareaProps,
-  KvcTimePickerProps,
-  KvcTabProps,
-  KvcTabPaneProps,
-  KvcWrapProps,
-} from './component-types'
-
-export interface KintoneVueGlobalComponents {
-  KvcButton: DefineComponent<KvcButtonProps>
-  KvcCheckbox: DefineComponent<KvcCheckboxProps>
-  KvcDatePicker: DefineComponent<KvcDatePickerProps>
-  KvcDateTimePicker: DefineComponent<KvcDateTimePickerProps>
-  KvcDialog: DefineComponent<KvcDialogProps>
-  KvcDropdown: DefineComponent<KvcDropdownProps>
-  KvcAutocomplete: DefineComponent<KvcAutocompleteProps>
-  KvcMultiSelect: DefineComponent<KvcMultiSelectProps>
-  KvcField: DefineComponent<KvcFieldProps>
-  KvcGroup: DefineComponent<KvcGroupProps>
-  KvcFileSelect: DefineComponent<KvcFileSelectProps>
-  KvcRadio: DefineComponent<KvcRadioProps>
-  KvcRow: DefineComponent
-  KvcTab: DefineComponent<KvcTabProps>
-  KvcTabPane: DefineComponent<KvcTabPaneProps>
-  KvcTable: DefineComponent<KvcTableProps>
-  KvcTextInput: DefineComponent<KvcTextInputProps>
-  KvcTextarea: DefineComponent<KvcTextareaProps>
-  KvcTimePicker: DefineComponent<KvcTimePickerProps>
-  KvcWrap: DefineComponent<KvcWrapProps>
-}
+import type {
+  KvcWrap,
+  KvcRow,
+  KvcSpinner,
+  KvcDialog,
+  KvcTable,
+  KvcDropdown,
+  KvcAutocomplete,
+  KvcMultiSelect,
+  KvcButton,
+  KvcField,
+  KvcGroup,
+  KvcRadio,
+  KvcCheckbox,
+  KvcTextInput,
+  KvcDatePicker,
+  KvcTimePicker,
+  KvcDateTimePicker,
+  KvcTextarea,
+  KvcFileSelect,
+  KvcTab,
+  KvcTabPane,
+} from '../components'
 
 declare module 'vue' {
-  export interface GlobalComponents extends KintoneVueGlobalComponents {}
+  export interface GlobalComponents {
+    KvcWrap: typeof KvcWrap
+    KvcRow: typeof KvcRow
+    KvcSpinner: typeof KvcSpinner
+    KvcDialog: typeof KvcDialog
+    KvcTable: typeof KvcTable
+    KvcDropdown: typeof KvcDropdown
+    KvcAutocomplete: typeof KvcAutocomplete
+    KvcMultiSelect: typeof KvcMultiSelect
+    KvcButton: typeof KvcButton
+    KvcField: typeof KvcField
+    KvcGroup: typeof KvcGroup
+    KvcRadio: typeof KvcRadio
+    KvcCheckbox: typeof KvcCheckbox
+    KvcTextInput: typeof KvcTextInput
+    KvcDatePicker: typeof KvcDatePicker
+    KvcTimePicker: typeof KvcTimePicker
+    KvcDateTimePicker: typeof KvcDateTimePicker
+    KvcTextarea: typeof KvcTextarea
+    KvcFileSelect: typeof KvcFileSelect
+    KvcTab: typeof KvcTab
+    KvcTabPane: typeof KvcTabPane
+  }
 }
