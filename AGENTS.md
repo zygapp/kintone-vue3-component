@@ -303,4 +303,4 @@ MIT
 
 ## リポジトリ
 
-https://git.zygapp.org/kintone-utils/kintone-vue3-component
+https://github.com/zygapp/kintone-vue3-component

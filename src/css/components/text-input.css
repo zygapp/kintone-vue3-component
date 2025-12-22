@@ -2,10 +2,6 @@
   input.kvc-field-text {
     padding: 0 8px;
     height: 40px;
-
-    &:disabled {
-      min-width: fit-content;
-    }
   }
 
   textarea.kvc-field-text {
